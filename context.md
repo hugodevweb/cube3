@@ -1,0 +1,5 @@
+THE PROJECT MUST BE IN FRENCH
+
+The project, titled "La Petite Maison de l’Épouvante" (The Little House of Horror), is a digital transformation initiative for a 10-year-old company specializing in horror, fantasy, and heroic fantasy culture. Founded by five enthusiasts—including two former IT professionals—the company currently operates fanzine publishing, physical retail stores in France and London, and an annual horror film festival.
+
+he "Blockbuster" Platform ProjectThe company aims to replace its current CMS-based showcase site with a modern, integrated "blockbuster" platform. The new requirements include:E-Commerce: Online sales of physical products (figurines, games, Blu-rays) and digital fanzines accessible via an integrated reader.Community Space: A system for peer-to-peer trading or giving of goods, including a chat for enthusiasts and automated notifications based on user interests.Content Streaming: Future phases (V2/V3) plan to integrate auctions and restricted online broadcasting of festival films and original productions from their "Evil Ed" collective.Intelligence: A recommendation system based on user search and purchase history.
