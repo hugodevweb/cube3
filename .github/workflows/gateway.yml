@@ -1,0 +1,25 @@
+name: Gateway — CI/CD
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - "services/gateway/**"
+      - ".github/workflows/gateway.yml"
+      - ".github/workflows/ci-template.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "services/gateway/**"
+      - ".github/workflows/gateway.yml"
+      - ".github/workflows/ci-template.yml"
+
+jobs:
+  pipeline:
+    uses: ./.github/workflows/ci-template.yml
+    with:
+      service: gateway
+      service_path: services/gateway
+      k8s_deployment: gateway
+      k8s_namespace: maison-epouvante
+    secrets: inherit

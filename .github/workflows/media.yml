@@ -1,0 +1,25 @@
+name: Media — CI/CD
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - "services/media/**"
+      - ".github/workflows/media.yml"
+      - ".github/workflows/ci-template.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "services/media/**"
+      - ".github/workflows/media.yml"
+      - ".github/workflows/ci-template.yml"
+
+jobs:
+  pipeline:
+    uses: ./.github/workflows/ci-template.yml
+    with:
+      service: media
+      service_path: services/media
+      k8s_deployment: media
+      k8s_namespace: maison-epouvante
+    secrets: inherit

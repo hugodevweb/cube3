@@ -1,0 +1,147 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Reusable CI/CD workflow — called by every per-service workflow.
+#
+# Jobs
+#   ci  : install → lint → test → npm audit        (always)
+#   cd  : docker build+push → kubectl rollout       (push to main only)
+#
+# Required secrets (pass via `secrets: inherit` or explicitly):
+#   KUBECONFIG   — base64-encoded kubeconfig for the target cluster
+#
+# Registry: GitHub Container Registry (ghcr.io)
+#   Authentication uses the built-in GITHUB_TOKEN (no extra secret needed).
+# ─────────────────────────────────────────────────────────────────────────────
+name: CI/CD Template
+
+on:
+  workflow_call:
+    inputs:
+      service:
+        description: "Service name — used as the Docker image name"
+        required: true
+        type: string
+      service_path:
+        description: "Relative path to the service directory (build context)"
+        required: true
+        type: string
+      k8s_deployment:
+        description: "Name of the Kubernetes Deployment to update"
+        required: true
+        type: string
+      k8s_namespace:
+        description: "Kubernetes namespace"
+        required: false
+        type: string
+        default: maison-epouvante
+      node_version:
+        description: "Node.js version to use"
+        required: false
+        type: string
+        default: "20"
+    secrets:
+      KUBECONFIG:
+        description: "Base64-encoded kubeconfig for kubectl deploy step"
+        required: true
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE: ghcr.io/${{ github.repository_owner }}/${{ inputs.service }}
+
+# ─── Job 1: CI ───────────────────────────────────────────────────────────────
+jobs:
+  ci:
+    name: "CI — ${{ inputs.service }}"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      # ── Step 1: Checkout ────────────────────────────────────────────────────
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # ── Step 2: Install dependencies ─────────────────────────────────────────
+      - name: Set up Node.js ${{ inputs.node_version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node_version }}
+          cache: npm
+          cache-dependency-path: ${{ inputs.service_path }}/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ${{ inputs.service_path }}
+        run: npm ci
+
+      # ── Step 3: Lint ─────────────────────────────────────────────────────────
+      - name: Lint
+        working-directory: ${{ inputs.service_path }}
+        run: npm run lint
+
+      # ── Step 4: Unit tests ───────────────────────────────────────────────────
+      - name: Run unit tests
+        working-directory: ${{ inputs.service_path }}
+        run: npm test -- --passWithNoTests
+
+      # ── Step 5: Security scan ────────────────────────────────────────────────
+      - name: Security scan (npm audit)
+        working-directory: ${{ inputs.service_path }}
+        # Fail only on high/critical vulnerabilities to keep the pipeline viable
+        run: npm audit --audit-level=high
+
+  # ─── Job 2: CD ─────────────────────────────────────────────────────────────
+  cd:
+    name: "CD — ${{ inputs.service }}"
+    runs-on: ubuntu-latest
+    needs: ci
+    # Deploy only when pushing to main
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+      packages: write   # required to push to ghcr.io
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # ── Step 6: Build multi-stage Docker image ───────────────────────────────
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # ── Step 7: Push image to container registry ─────────────────────────────
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: ${{ inputs.service_path }}
+          push: true
+          tags: |
+            ${{ env.IMAGE }}:${{ github.sha }}
+            ${{ env.IMAGE }}:latest
+          # Layer cache keyed per service to speed up subsequent builds
+          cache-from: type=gha,scope=${{ inputs.service }}
+          cache-to: type=gha,mode=max,scope=${{ inputs.service }}
+
+      # ── Step 8: Deploy to Kubernetes cluster ─────────────────────────────────
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v3
+
+      - name: Deploy to Kubernetes
+        env:
+          KUBECONFIG_DATA: ${{ secrets.KUBECONFIG }}
+        run: |
+          echo "${KUBECONFIG_DATA}" | base64 -d > /tmp/kubeconfig
+          export KUBECONFIG=/tmp/kubeconfig
+
+          kubectl set image deployment/${{ inputs.k8s_deployment }} \
+            ${{ inputs.k8s_deployment }}=${{ env.IMAGE }}:${{ github.sha }} \
+            --namespace ${{ inputs.k8s_namespace }}
+
+          kubectl rollout status deployment/${{ inputs.k8s_deployment }} \
+            --namespace ${{ inputs.k8s_namespace }} \
+            --timeout=300s

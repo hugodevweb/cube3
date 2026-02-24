@@ -1,0 +1,33 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: maison-epouvante-ingress
+  namespace: maison-epouvante
+  labels:
+    app.kubernetes.io/part-of: maison-epouvante
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/proxy-body-size: 50m
+    nginx.ingress.kubernetes.io/proxy-read-timeout: '60'
+    nginx.ingress.kubernetes.io/proxy-send-timeout: '60'
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          # Toutes les requêtes /api/* sont routées vers le gateway
+          - path: /api(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: gateway
+                port:
+                  number: 3000
+          # Toutes les autres requêtes vont vers le frontend React
+          - path: /()(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: frontend
+                port:
+                  number: 80

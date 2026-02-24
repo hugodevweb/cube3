@@ -10,6 +10,7 @@ Ce document définit la stack et les règles d'architecture pour la génération
 * **Authentification :** Keycloak (OIDC) - Gestion via tokens JWT.
 * **Infrastructure :** Docker & Kubernetes (use docker desktop kubernetes) (Manifestes YAML / Helm Charts).
 * **CI/CD :** GitHub Actions (Workflows YAML).
+--done
 
 ## 2. Architecture Logicielle
 * **Pattern :** Micro-services découpés par domaine (Auth, Vente, Communauté, Média).
