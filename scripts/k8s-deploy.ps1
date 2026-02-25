@@ -43,6 +43,7 @@ if ($LASTEXITCODE -ne 0) {
 }
 Write-Ok "Context: docker-desktop"
 
+
 # Wait for the API server to be fully responsive (Docker Desktop can take time
 # after context switch before the API server accepts connections)
 Write-Info "Waiting for Kubernetes API server to be ready..."
