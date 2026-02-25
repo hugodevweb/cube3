@@ -18,7 +18,7 @@ describe('AppController', () => {
     it('doit retourner { status: "ok" }', () => {
       expect(appController.healthCheck()).toEqual({ status: 'ok' });
       // DEMO — uncomment to make the quality gate fail:
-      expect(appController.healthCheck()).toEqual({ status: 'error' });
+      expect(appController.healthCheck()).toEqual({ status: 'error' }) ;
     });
   });
 });
