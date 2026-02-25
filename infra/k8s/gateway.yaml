@@ -27,6 +27,18 @@ spec:
               value: '3000'
             - name: NODE_ENV
               value: production
+            - name: KEYCLOAK_URL
+              value: http://keycloak:8080
+            - name: KEYCLOAK_REALM
+              value: maison-epouvante
+            - name: AUTH_SERVICE_URL
+              value: http://auth:3001
+            - name: VENTE_SERVICE_URL
+              value: http://vente:3002
+            - name: COMMUNAUTE_SERVICE_URL
+              value: http://communaute:3003
+            - name: MEDIA_SERVICE_URL
+              value: http://media:3004
           resources:
             requests:
               cpu: 100m
