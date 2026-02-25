@@ -52,7 +52,7 @@ spec:
               memory: 512Mi
           livenessProbe:
             httpGet:
-              path: /communaute
+              path: /communaute/health
               port: 3003
             initialDelaySeconds: 30
             periodSeconds: 15
@@ -60,7 +60,7 @@ spec:
             failureThreshold: 3
           readinessProbe:
             httpGet:
-              path: /communaute
+              path: /communaute/health
               port: 3003
             initialDelaySeconds: 10
             periodSeconds: 10

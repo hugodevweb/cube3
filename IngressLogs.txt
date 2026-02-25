@@ -1,0 +1,43 @@
+2026-02-25 02:06:10.498 | -------------------------------------------------------------------------------
+2026-02-25 02:06:10.498 | NGINX Ingress controller
+2026-02-25 02:06:10.498 |   Release:       v1.10.1
+2026-02-25 02:06:10.498 |   Build:         4fb5aac1dd3669daa3a14d9de3e3cdb371b4c518
+2026-02-25 02:06:10.498 |   Repository:    https://github.com/kubernetes/ingress-nginx
+2026-02-25 02:06:10.498 |   nginx version: nginx/1.25.3
+2026-02-25 02:06:10.498 | 
+2026-02-25 02:06:10.498 | -------------------------------------------------------------------------------
+2026-02-25 02:06:10.498 | 
+2026-02-25 02:06:10.499 | W0225 01:06:10.499269       7 client_config.go:618] Neither --kubeconfig nor --master was specified.  Using the inClusterConfig.  This might not work.
+2026-02-25 02:06:10.499 | I0225 01:06:10.499543       7 main.go:205] "Creating API client" host="https://10.96.0.1:443"
+2026-02-25 02:06:10.508 | I0225 01:06:10.508186       7 main.go:248] "Running in Kubernetes cluster" major="1" minor="34" git="v1.34.1" state="clean" commit="93248f9ae092f571eb870b7664c534bfc7d00f03" platform="linux/amd64"
+2026-02-25 02:06:10.831 | I0225 01:06:10.830920       7 main.go:101] "SSL fake certificate created" file="/etc/ingress-controller/ssl/default-fake-certificate.pem"
+2026-02-25 02:06:10.844 | I0225 01:06:10.844382       7 ssl.go:535] "loading tls certificate" path="/usr/local/certificates/cert" key="/usr/local/certificates/key"
+2026-02-25 02:06:10.856 | I0225 01:06:10.856521       7 nginx.go:264] "Starting NGINX Ingress controller"
+2026-02-25 02:06:10.863 | I0225 01:06:10.862924       7 event.go:364] Event(v1.ObjectReference{Kind:"ConfigMap", Namespace:"ingress-nginx", Name:"ingress-nginx-controller", UID:"05dc6d24-5750-4f8c-aa78-e25e4d6f8159", APIVersion:"v1", ResourceVersion:"466", FieldPath:""}): type: 'Normal' reason: 'CREATE' ConfigMap ingress-nginx/ingress-nginx-controller
+2026-02-25 02:06:12.058 | I0225 01:06:12.058135       7 nginx.go:307] "Starting NGINX process"
+2026-02-25 02:06:12.058 | I0225 01:06:12.058297       7 leaderelection.go:250] attempting to acquire leader lease ingress-nginx/ingress-nginx-leader...
+2026-02-25 02:06:12.058 | I0225 01:06:12.058814       7 nginx.go:327] "Starting validation webhook" address=":8443" certPath="/usr/local/certificates/cert" keyPath="/usr/local/certificates/key"
+2026-02-25 02:06:12.059 | I0225 01:06:12.058950       7 controller.go:190] "Configuration changes detected, backend reload required"
+2026-02-25 02:06:12.065 | I0225 01:06:12.065105       7 leaderelection.go:260] successfully acquired lease ingress-nginx/ingress-nginx-leader
+2026-02-25 02:06:12.065 | I0225 01:06:12.065202       7 status.go:84] "New leader elected" identity="ingress-nginx-controller-5dc6969574-6n2d2"
+2026-02-25 02:06:12.084 | I0225 01:06:12.084806       7 controller.go:210] "Backend successfully reloaded"
+2026-02-25 02:06:12.084 | I0225 01:06:12.084887       7 controller.go:221] "Initial sync, sleeping for 1 second"
+2026-02-25 02:06:12.085 | I0225 01:06:12.084931       7 event.go:364] Event(v1.ObjectReference{Kind:"Pod", Namespace:"ingress-nginx", Name:"ingress-nginx-controller-5dc6969574-6n2d2", UID:"7576fda8-ef35-4987-a35e-1fc633339f30", APIVersion:"v1", ResourceVersion:"493", FieldPath:""}): type: 'Normal' reason: 'RELOAD' NGINX reload triggered due to a change in configuration
+2026-02-25 02:07:37.040 | W0225 01:07:37.040042       7 controller.go:1213] Service "maison-epouvante/gateway" does not have any active Endpoint.
+2026-02-25 02:07:37.040 | W0225 01:07:37.040159       7 controller.go:1213] Service "maison-epouvante/frontend" does not have any active Endpoint.
+2026-02-25 02:07:37.068 | I0225 01:07:37.066163       7 main.go:107] "successfully validated configuration, accepting" ingress="maison-epouvante/maison-epouvante-ingress"
+2026-02-25 02:07:37.074 | I0225 01:07:37.073966       7 store.go:440] "Found valid IngressClass" ingress="maison-epouvante/maison-epouvante-ingress" ingressclass="nginx"
+2026-02-25 02:07:37.076 | I0225 01:07:37.076308       7 event.go:364] Event(v1.ObjectReference{Kind:"Ingress", Namespace:"maison-epouvante", Name:"maison-epouvante-ingress", UID:"a9961c4d-59ff-4185-aad8-adefe614b5d2", APIVersion:"networking.k8s.io/v1", ResourceVersion:"961", FieldPath:""}): type: 'Normal' reason: 'Sync' Scheduled for sync
+2026-02-25 02:07:38.483 | W0225 01:07:38.483712       7 controller.go:1213] Service "maison-epouvante/gateway" does not have any active Endpoint.
+2026-02-25 02:07:38.484 | W0225 01:07:38.483756       7 controller.go:1213] Service "maison-epouvante/frontend" does not have any active Endpoint.
+2026-02-25 02:07:38.484 | I0225 01:07:38.483836       7 controller.go:190] "Configuration changes detected, backend reload required"
+2026-02-25 02:07:38.511 | I0225 01:07:38.511071       7 controller.go:210] "Backend successfully reloaded"
+2026-02-25 02:07:38.511 | I0225 01:07:38.511444       7 event.go:364] Event(v1.ObjectReference{Kind:"Pod", Namespace:"ingress-nginx", Name:"ingress-nginx-controller-5dc6969574-6n2d2", UID:"7576fda8-ef35-4987-a35e-1fc633339f30", APIVersion:"v1", ResourceVersion:"493", FieldPath:""}): type: 'Normal' reason: 'RELOAD' NGINX reload triggered due to a change in configuration
+2026-02-25 02:07:41.817 | W0225 01:07:41.817118       7 controller.go:1213] Service "maison-epouvante/gateway" does not have any active Endpoint.
+2026-02-25 02:07:41.817 | W0225 01:07:41.817162       7 controller.go:1213] Service "maison-epouvante/frontend" does not have any active Endpoint.
+2026-02-25 02:07:45.152 | W0225 01:07:45.152231       7 controller.go:1213] Service "maison-epouvante/gateway" does not have any active Endpoint.
+2026-02-25 02:07:45.152 | W0225 01:07:45.152280       7 controller.go:1213] Service "maison-epouvante/frontend" does not have any active Endpoint.
+2026-02-25 02:07:50.139 | W0225 01:07:50.139334       7 controller.go:1213] Service "maison-epouvante/gateway" does not have any active Endpoint.
+2026-02-25 02:08:12.071 | I0225 01:08:12.071749       7 status.go:304] "updating Ingress status" namespace="maison-epouvante" ingress="maison-epouvante-ingress" currentValue=null newValue=[{"hostname":"localhost"}]
+2026-02-25 02:08:12.077 | I0225 01:08:12.077365       7 event.go:364] Event(v1.ObjectReference{Kind:"Ingress", Namespace:"maison-epouvante", Name:"maison-epouvante-ingress", UID:"a9961c4d-59ff-4185-aad8-adefe614b5d2", APIVersion:"networking.k8s.io/v1", ResourceVersion:"1077", FieldPath:""}): type: 'Normal' reason: 'Sync' Scheduled for sync
+2026-02-25 02:08:12.077 | W0225 01:08:12.077569       7 controller.go:1213] Service "maison-epouvante/gateway" does not have any active Endpoint.

@@ -24,6 +24,10 @@ spec:
             - containerPort: 3004
           env:
             - name: PORT
+            - name: DATABASE_URL
+              value: postgresql://maison:changeme@postgres:5432/maison_epouvante
+            - name: RABBITMQ_URL
+              value: amqp://maison:changeme@rabbitmq:5672
               value: '3004'
             - name: NODE_ENV
               value: production
@@ -36,7 +40,7 @@ spec:
               memory: 512Mi
           livenessProbe:
             httpGet:
-              path: /media
+              path: /media/health
               port: 3004
             initialDelaySeconds: 30
             periodSeconds: 15
@@ -44,7 +48,7 @@ spec:
             failureThreshold: 3
           readinessProbe:
             httpGet:
-              path: /media
+              path: /media/health
               port: 3004
             initialDelaySeconds: 10
             periodSeconds: 10

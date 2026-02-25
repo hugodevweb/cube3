@@ -43,6 +43,25 @@ if ($LASTEXITCODE -ne 0) {
 }
 Write-Ok "Context: docker-desktop"
 
+# Wait for the API server to be fully responsive (Docker Desktop can take time
+# after context switch before the API server accepts connections)
+Write-Info "Waiting for Kubernetes API server to be ready..."
+$retries = 0
+$maxRetries = 18   # up to ~3 minutes
+while ($retries -lt $maxRetries) {
+    kubectl cluster-info 2>&1 | Out-Null
+    if ($LASTEXITCODE -eq 0) { break }
+    $retries++
+    Write-Info "  API server not ready yet ($retries/$maxRetries) — retrying in 10s..."
+    Start-Sleep -Seconds 10
+}
+if ($LASTEXITCODE -ne 0) {
+    Write-Fail "Kubernetes API server is unreachable after 3 minutes."
+    Write-Fail "Try: Docker Desktop → Settings → Kubernetes → Reset Kubernetes Cluster"
+    exit 1
+}
+Write-Ok "Kubernetes API server is ready"
+
 # ── NGINX Ingress Controller ────────────────────────────────────────────────────
 Write-Step "Checking NGINX ingress controller"
 $ingressNs = kubectl get namespace ingress-nginx --ignore-not-found 2>$null
