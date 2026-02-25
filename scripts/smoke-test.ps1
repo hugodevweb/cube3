@@ -6,13 +6,13 @@
 #
 # Defaults:
 #   BaseUrl  = http://localhost:3000/api
-#   Username = testuser
-#   Password = testpassword
+#   Username = user-test
+#   Password = user123
 
 param(
     [string]$BaseUrl  = "http://localhost:3000/api",
-    [string]$Username = "testuser",
-    [string]$Password = "testpassword"
+    [string]$Username = "user-test",
+    [string]$Password = "user123"
 )
 
 Set-StrictMode -Version Latest

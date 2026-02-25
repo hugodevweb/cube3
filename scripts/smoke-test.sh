@@ -7,14 +7,14 @@
 #
 # Defaults:
 #   BASE_URL  = http://localhost:3000/api
-#   USERNAME  = testuser
-#   PASSWORD  = testpassword
+#   USERNAME  = user-test
+#   PASSWORD  = user123
 
 set -euo pipefail
 
 BASE_URL="${1:-http://localhost:3000/api}"
-USERNAME="${2:-testuser}"
-PASSWORD="${3:-testpassword}"
+USERNAME="${2:-user-test}"
+PASSWORD="${3:-user123}"
 COOKIE_JAR="$(mktemp /tmp/smoke-cookies-XXXXXX.txt)"
 PASS=0
 FAIL=0

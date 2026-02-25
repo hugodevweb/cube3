@@ -35,11 +35,36 @@ docker compose ps        # all three containers should be healthy
 
 ### 1.2 Open the RabbitMQ Management UI
 
-`http://localhost:15672` — login: `maison` / `changeme`
+`http://localhost:15672`
+
+**Credentials:**
+
+| Field | Value |
+|-------|-------|
+| Username | `maison` |
+| Password | `changeme` |
 
 **What to show:**
 - The management dashboard with queues and exchange overview
-- Point out that the `order.created` event will appear here when an order is placed (later in the demo)
+- All queues are **pre-declared** at startup via `infra/rabbitmq/definitions.json` — they appear immediately, before any service connects
+
+**Queues overview:**
+
+| Queue | Service | Purpose |
+|-------|---------|---------|
+| `orders_queue` | Vente | Receives `order.created` events when a customer places an order |
+| `communaute_queue` | Communauté | Receives `post.#` events (new posts, comments, likes) |
+| `media_queue` | Média | Receives `media.#` events (upload completed, transcoding done) |
+| `notifications_queue` | Cross-service | Receives `notification.#` events (email alerts, push notifications) |
+
+**Exchange & bindings:**
+- `maison_events` (topic exchange) routes messages to the correct queue via routing keys:
+  - `order.#` → `orders_queue`
+  - `post.#` → `communaute_queue`
+  - `media.#` → `media_queue`
+  - `notification.#` → `notifications_queue`
+
+- Point out that the `order.created` message will land in `orders_queue` when an order is placed (later in the demo)
 
 ### 1.3 Open the Keycloak Admin Console
 
@@ -49,7 +74,7 @@ docker compose ps        # all three containers should be healthy
 - Realm `maison-epouvante` was automatically imported
 - Navigate to **Clients** → show the backend confidential client and the frontend public client (PKCE)
 - Navigate to **Realm roles** → `admin`, `user`
-- Navigate to **Users** → pre-created `testuser` (role: `user`) and `admin` (role: `admin`)
+- Navigate to **Users** → pre-created `user-test` (role: `user`) and `admin-test` (roles: `admin` + `user`)
 - Point out **"HttpOnly cookie" design** — no JWT ever reaches `localStorage`
 
 ---
@@ -107,7 +132,7 @@ cd frontend            && npm run dev
 | `POST` | `/auth/logout` | Clears both cookies |
 
 **Live demo — login via Swagger:**
-1. `POST /auth/login` with body `{ "username": "testuser", "password": "testpassword" }`
+1. `POST /auth/login` with body `{ "username": "user-test", "password": "user123" }`
 2. Show the response: `200 OK`, no token in the body
 3. Open browser DevTools → **Application → Cookies**: `access_token` and `refresh_token` are `HttpOnly`, `Secure`, `SameSite=Strict`
 4. `GET /auth/me` — the cookie is sent automatically, returns `{ sub, preferred_username, roles, ... }`
@@ -127,7 +152,7 @@ cd frontend            && npm run dev
 | `GET` | `/orders` | Returns caller's orders only |
 
 **Live demo — create a product (admin flow):**
-1. Log in as `admin` (re-run the login endpoint or switch user in Swagger)
+1. Log in as `admin-test` (re-run the login endpoint with `{ "username": "admin-test", "password": "admin123" }`)
 2. `POST /products` with a sample body (film, BD, or goodie)
 3. Show `403 Forbidden` when attempting the same call with a `user`-role token → **`RolesGuard` in action**
 
@@ -154,7 +179,7 @@ Open `http://localhost:5173`.
 ### 4.1 Login
 
 - Navigate to `/login`
-- Log in as `testuser` / `testpassword`
+- Log in as `user-test` / `user123`
 - Show that the URL does **not** contain a token, and `localStorage` is empty (DevTools)
 - The cookie is set automatically and used for every subsequent request
 
@@ -188,10 +213,10 @@ Open `http://localhost:5173`.
 
 ### 4.6 Admin Panel (role-protected)
 
-- Log out, then log back in as `admin` / (admin password from Keycloak)
+- Log out, then log back in as `admin-test` / `admin123`
 - The **Admin** link appears in the navbar (hidden for `user` role)
 - Navigate to `/admin` → product and user management panel
-- Attempt to access `/admin` while logged in as `testuser` → redirect or `403`
+- Attempt to access `/admin` while logged in as `user-test` → redirect or `403`
 
 ---
 

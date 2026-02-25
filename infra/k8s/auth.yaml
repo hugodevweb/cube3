@@ -29,6 +29,12 @@ spec:
               value: production
             - name: KEYCLOAK_URL
               value: http://keycloak:8080
+            - name: KEYCLOAK_REALM
+              value: maison-epouvante
+            - name: KEYCLOAK_CLIENT_ID
+              value: maison-backend
+            - name: KEYCLOAK_CLIENT_SECRET
+              value: change-me-backend-secret
           resources:
             requests:
               cpu: 100m

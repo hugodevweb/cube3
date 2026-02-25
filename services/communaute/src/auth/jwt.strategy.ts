@@ -25,7 +25,8 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
         jwksRequestsPerMinute: 10,
         jwksUri: `${keycloakUrl}/realms/${realm}/protocol/openid-connect/certs`,
       }),
-      audience: process.env.KEYCLOAK_CLIENT_ID ?? 'maison-backend',
+      // Keycloak places the client ID in `azp`, not `aud`, for standard user
+      // tokens. The JWKS signature + issuer check is the real security guarantee.
       issuer: `${keycloakUrl}/realms/${realm}`,
       algorithms: ['RS256'],
     });

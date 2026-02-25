@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { PassportModule } from '@nestjs/passport';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { PostsModule } from './posts/posts.module';
+import { NotificationsModule } from './notifications/notifications.module';
 import { JwtStrategy } from './auth/jwt.strategy';
 
 @Module({
@@ -32,6 +33,7 @@ import { JwtStrategy } from './auth/jwt.strategy';
       },
     ]),
     PostsModule,
+    NotificationsModule,
   ],
   providers: [JwtStrategy],
 })

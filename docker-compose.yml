@@ -16,7 +16,7 @@ services:
       - pgdata:/var/lib/postgresql/data
       - ./infra/docker/postgres-init.sql:/docker-entrypoint-initdb.d/init.sql:ro
     healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-maison}']
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-maison} -d ${POSTGRES_DB:-maison_epouvante}']
       interval: 10s
       timeout: 5s
       retries: 5
@@ -34,6 +34,8 @@ services:
       - '15672:15672'
     volumes:
       - rabbitmqdata:/var/lib/rabbitmq
+      - ./infra/rabbitmq/definitions.json:/etc/rabbitmq/definitions.json:ro
+      - ./infra/rabbitmq/rabbitmq.conf:/etc/rabbitmq/conf.d/20-definitions.conf:ro
     healthcheck:
       test: ['CMD', 'rabbitmq-diagnostics', '-q', 'ping']
       interval: 15s
@@ -53,6 +55,7 @@ services:
       KC_DB_PASSWORD: ${KEYCLOAK_DB_PASSWORD:-changeme_keycloak}
       KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN:-admin}
       KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD:-changeme_admin}
+      KC_HEALTH_ENABLED: "true"
     ports:
       - '8080:8080'
     volumes:
@@ -61,11 +64,133 @@ services:
       postgres:
         condition: service_healthy
     healthcheck:
-      test: ['CMD-SHELL', 'curl -f http://localhost:8080/health/ready || exit 1']
+      test: ['CMD-SHELL', "exec 3<>/dev/tcp/localhost/8080 && printf 'GET /health/ready HTTP/1.0\\r\\nHost: localhost\\r\\n\\r\\n' >&3 && timeout 10 cat <&3 | grep -q 'UP'"]
       interval: 30s
-      timeout: 10s
-      retries: 10
-      start_period: 60s
+      timeout: 15s
+      retries: 15
+      start_period: 120s
+
+  # ─── Auth Microservice ───────────────────────────────────────────────────────
+  auth:
+    build:
+      context: ./services/auth
+    container_name: maison_auth
+    restart: unless-stopped
+    environment:
+      NODE_ENV: development
+      PORT: 3001
+      KEYCLOAK_URL: ${KEYCLOAK_URL:-http://keycloak:8080}
+      KEYCLOAK_REALM: ${KEYCLOAK_REALM:-maison-epouvante}
+      KEYCLOAK_CLIENT_ID: ${KEYCLOAK_CLIENT_ID:-maison-backend}
+      KEYCLOAK_CLIENT_SECRET: ${KEYCLOAK_CLIENT_SECRET:-change-me-backend-secret}
+    ports:
+      - '3001:3001'
+    depends_on:
+      keycloak:
+        condition: service_healthy
+
+  # ─── Vente Microservice ───────────────────────────────────────────────────────
+  vente:
+    build:
+      context: ./services/vente
+    container_name: maison_vente
+    restart: unless-stopped
+    environment:
+      NODE_ENV: development
+      PORT: 3002
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: ${POSTGRES_USER:-maison}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+      DB_NAME: ${POSTGRES_DB:-maison_epouvante}
+      KEYCLOAK_URL: ${KEYCLOAK_URL:-http://keycloak:8080}
+      KEYCLOAK_REALM: ${KEYCLOAK_REALM:-maison-epouvante}
+    ports:
+      - '3002:3002'
+    depends_on:
+      postgres:
+        condition: service_healthy
+      keycloak:
+        condition: service_healthy
+
+  # ─── Communauté Microservice ──────────────────────────────────────────────────
+  communaute:
+    build:
+      context: ./services/communaute
+    container_name: maison_communaute
+    restart: unless-stopped
+    environment:
+      NODE_ENV: development
+      PORT: 3003
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: ${POSTGRES_USER:-maison}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+      DB_NAME: ${POSTGRES_DB:-maison_epouvante}
+      RABBITMQ_URL: amqp://${RABBITMQ_DEFAULT_USER:-maison}:${RABBITMQ_DEFAULT_PASS:-changeme}@rabbitmq:5672
+      KEYCLOAK_URL: ${KEYCLOAK_URL:-http://keycloak:8080}
+      KEYCLOAK_REALM: ${KEYCLOAK_REALM:-maison-epouvante}
+    ports:
+      - '3003:3003'
+    depends_on:
+      postgres:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      keycloak:
+        condition: service_healthy
+
+  # ─── Média Microservice ───────────────────────────────────────────────────────
+  media:
+    build:
+      context: ./services/media
+    container_name: maison_media
+    restart: unless-stopped
+    environment:
+      NODE_ENV: development
+      PORT: 3004
+    ports:
+      - '3004:3004'
+
+  # ─── API Gateway ─────────────────────────────────────────────────────────────
+  gateway:
+    build:
+      context: ./services/gateway
+    container_name: maison_gateway
+    restart: unless-stopped
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      KEYCLOAK_URL: ${KEYCLOAK_URL:-http://keycloak:8080}
+      KEYCLOAK_REALM: ${KEYCLOAK_REALM:-maison-epouvante}
+      AUTH_SERVICE_URL: ${AUTH_SERVICE_URL:-http://auth:3001}
+      VENTE_SERVICE_URL: ${VENTE_SERVICE_URL:-http://vente:3002}
+      COMMUNAUTE_SERVICE_URL: ${COMMUNAUTE_SERVICE_URL:-http://communaute:3003}
+      MEDIA_SERVICE_URL: ${MEDIA_SERVICE_URL:-http://media:3004}
+    ports:
+      - '3000:3000'
+    depends_on:
+      keycloak:
+        condition: service_healthy
+      auth:
+        condition: service_started
+      vente:
+        condition: service_started
+      communaute:
+        condition: service_started
+      media:
+        condition: service_started
+
+  # ─── Frontend ─────────────────────────────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+    container_name: maison_frontend
+    restart: unless-stopped
+    ports:
+      - '5173:80'
+    depends_on:
+      - gateway
 
 volumes:
   pgdata:

@@ -31,10 +31,26 @@ export class ProxyService {
 
     const url = `${targetBaseUrl}${path}`;
 
-    // Copy all headers except `host` (replaced by the target host automatically)
+    // Hop-by-hop headers must not be forwarded between proxies (RFC 7230 §6.1).
+    // `content-length` is also dropped so axios recalculates it from the actual
+    // re-serialised body — forwarding the original length can cause a mismatch
+    // when Nginx (or any intermediate proxy) rewrites the body as chunked.
+    const HOP_BY_HOP = new Set([
+      'host',
+      'connection',
+      'keep-alive',
+      'transfer-encoding',
+      'te',
+      'trailers',
+      'upgrade',
+      'proxy-authorization',
+      'proxy-authenticate',
+      'content-length',
+    ]);
+
     const headers: Record<string, string> = {};
     for (const [key, value] of Object.entries(req.headers)) {
-      if (key.toLowerCase() === 'host') continue;
+      if (HOP_BY_HOP.has(key.toLowerCase())) continue;
       if (value !== undefined) {
         headers[key] = Array.isArray(value) ? value.join(', ') : value;
       }

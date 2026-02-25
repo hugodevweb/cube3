@@ -1,0 +1,662 @@
+2026-02-24 16:48:54.569 | The files belonging to this database system will be owned by user "postgres".
+2026-02-24 16:48:54.569 | This user must also own the server process.
+2026-02-24 16:48:54.569 | 
+2026-02-24 16:48:54.569 | The database cluster will be initialized with locale "en_US.utf8".
+2026-02-24 16:48:54.569 | The default database encoding has accordingly been set to "UTF8".
+2026-02-24 16:48:54.569 | The default text search configuration will be set to "english".
+2026-02-24 16:48:54.569 | 
+2026-02-24 16:48:54.569 | Data page checksums are disabled.
+2026-02-24 16:48:54.569 | 
+2026-02-24 16:48:54.569 | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+2026-02-24 16:48:54.572 | creating subdirectories ... ok
+2026-02-24 16:48:54.572 | selecting dynamic shared memory implementation ... posix
+2026-02-24 16:48:54.590 | selecting default max_connections ... 100
+2026-02-24 16:48:54.613 | selecting default shared_buffers ... 128MB
+2026-02-24 16:48:54.744 | selecting default time zone ... UTC
+2026-02-24 16:48:54.747 | creating configuration files ... ok
+2026-02-24 16:48:54.912 | running bootstrap script ... ok
+2026-02-24 16:48:55.762 | performing post-bootstrap initialization ... ok
+2026-02-24 16:48:56.450 | syncing data to disk ... ok
+2026-02-24 16:48:56.450 | 
+2026-02-24 16:48:55.214 | sh: locale: not found
+2026-02-24 16:48:55.215 | 2026-02-24 15:48:55.214 UTC [35] WARNING:  no usable system locales were found
+2026-02-24 16:48:56.450 | initdb: warning: enabling "trust" authentication for local connections
+2026-02-24 16:48:56.450 | initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+2026-02-24 16:48:57.502 | 2026-02-24 15:48:57.502 UTC [1] LOG:  starting PostgreSQL 16.12 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+2026-02-24 16:48:57.502 | 2026-02-24 15:48:57.502 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-02-24 16:48:57.502 | 2026-02-24 15:48:57.502 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2026-02-24 16:48:57.508 | 2026-02-24 15:48:57.507 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-02-24 16:48:57.515 | 2026-02-24 15:48:57.515 UTC [59] LOG:  database system was shut down at 2026-02-24 15:48:57 UTC
+2026-02-24 16:48:57.547 | 2026-02-24 15:48:57.547 UTC [1] LOG:  database system is ready to accept connections
+2026-02-24 16:49:04.567 | 2026-02-24 15:49:04.567 UTC [69] FATAL:  database "maison" does not exist
+2026-02-24 16:49:14.846 | 2026-02-24 15:49:14.845 UTC [76] FATAL:  database "maison" does not exist
+2026-02-24 16:49:24.936 | 2026-02-24 15:49:24.935 UTC [84] FATAL:  database "maison" does not exist
+2026-02-24 16:49:28.294 | 2026-02-24 15:49:28.293 UTC [85] ERROR:  relation "migration_model" does not exist at character 25
+2026-02-24 16:49:28.294 | 2026-02-24 15:49:28.293 UTC [85] STATEMENT:  SELECT ID, VERSION FROM MIGRATION_MODEL ORDER BY UPDATE_TIME DESC
+2026-02-24 16:49:29.997 | 2026-02-24 15:49:29.997 UTC [85] ERROR:  relation "public.databasechangelog" does not exist at character 22
+2026-02-24 16:49:29.997 | 2026-02-24 15:49:29.997 UTC [85] STATEMENT:  SELECT COUNT(*) FROM public.databasechangelog
+2026-02-24 16:49:30.368 | 2026-02-24 15:49:30.367 UTC [86] ERROR:  relation "public.databasechangeloglock" does not exist at character 22
+2026-02-24 16:49:30.368 | 2026-02-24 15:49:30.367 UTC [86] STATEMENT:  SELECT COUNT(*) FROM public.databasechangeloglock
+2026-02-24 16:49:30.465 | 2026-02-24 15:49:30.464 UTC [85] ERROR:  relation "public.databasechangelog" does not exist at character 22
+2026-02-24 16:49:30.465 | 2026-02-24 15:49:30.464 UTC [85] STATEMENT:  SELECT COUNT(*) FROM public.databasechangelog
+2026-02-24 16:49:35.000 | 2026-02-24 15:49:35.000 UTC [93] FATAL:  database "maison" does not exist
+2026-02-24 16:49:45.060 | 2026-02-24 15:49:45.060 UTC [101] FATAL:  database "maison" does not exist
+2026-02-24 16:49:55.106 | 2026-02-24 15:49:55.105 UTC [108] FATAL:  database "maison" does not exist
+2026-02-24 16:50:05.213 | 2026-02-24 15:50:05.211 UTC [116] FATAL:  database "maison" does not exist
+2026-02-24 16:50:15.269 | 2026-02-24 15:50:15.269 UTC [123] FATAL:  database "maison" does not exist
+2026-02-24 16:50:25.346 | 2026-02-24 15:50:25.346 UTC [131] FATAL:  database "maison" does not exist
+2026-02-24 16:50:35.446 | 2026-02-24 15:50:35.446 UTC [139] FATAL:  database "maison" does not exist
+2026-02-24 16:50:45.511 | 2026-02-24 15:50:45.510 UTC [145] FATAL:  database "maison" does not exist
+2026-02-24 16:50:55.553 | 2026-02-24 15:50:55.552 UTC [153] FATAL:  database "maison" does not exist
+2026-02-24 16:51:06.447 | 2026-02-24 15:51:06.447 UTC [161] FATAL:  database "maison" does not exist
+2026-02-24 22:53:59.227 | 2026-02-24 21:53:59.227 UTC [1] LOG:  starting PostgreSQL 16.12 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+2026-02-24 22:53:59.227 | 2026-02-24 21:53:59.227 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-02-24 22:53:59.227 | 2026-02-24 21:53:59.227 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2026-02-24 22:53:59.233 | 2026-02-24 21:53:59.232 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-02-24 22:53:59.242 | 2026-02-24 21:53:59.241 UTC [29] LOG:  database system was interrupted; last known up at 2026-02-24 15:48:57 UTC
+2026-02-24 22:54:00.935 | 2026-02-24 21:54:00.933 UTC [29] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-02-24 22:54:00.945 | 2026-02-24 21:54:00.944 UTC [29] LOG:  redo starts at 0/1D4B8D0
+2026-02-24 22:54:01.120 | 2026-02-24 21:54:01.120 UTC [29] LOG:  invalid record length at 0/2170FD8: expected at least 24, got 0
+2026-02-24 22:54:01.120 | 2026-02-24 21:54:01.120 UTC [29] LOG:  redo done at 0/2170FA0 system usage: CPU: user: 0.04 s, system: 0.08 s, elapsed: 0.17 s
+2026-02-24 22:54:01.132 | 2026-02-24 21:54:01.131 UTC [27] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-02-24 22:54:01.527 | 2026-02-24 21:54:01.527 UTC [27] LOG:  checkpoint complete: wrote 748 buffers (4.6%); 0 WAL file(s) added, 0 removed, 1 recycled; write=0.034 s, sync=0.338 s, total=0.400 s; sync files=483, longest=0.008 s, average=0.001 s; distance=4245 kB, estimate=4245 kB; lsn=0/2170FD8, redo lsn=0/2170FD8
+2026-02-24 22:54:01.558 | 2026-02-24 21:54:01.558 UTC [1] LOG:  database system is ready to accept connections
+2026-02-24 22:54:09.177 | 2026-02-24 21:54:09.175 UTC [39] FATAL:  database "maison" does not exist
+2026-02-24 22:54:19.318 | 2026-02-24 21:54:19.313 UTC [47] FATAL:  database "maison" does not exist
+2026-02-24 22:54:29.382 | 2026-02-24 21:54:29.382 UTC [54] FATAL:  database "maison" does not exist
+2026-02-24 22:54:39.453 | 2026-02-24 21:54:39.452 UTC [62] FATAL:  database "maison" does not exist
+2026-02-24 22:54:49.513 | 2026-02-24 21:54:49.513 UTC [69] FATAL:  database "maison" does not exist
+2026-02-24 22:54:59.546 | 2026-02-24 21:54:59.546 UTC [77] FATAL:  database "maison" does not exist
+2026-02-24 22:55:09.581 | 2026-02-24 21:55:09.581 UTC [85] FATAL:  database "maison" does not exist
+2026-02-24 22:55:19.613 | 2026-02-24 21:55:19.612 UTC [92] FATAL:  database "maison" does not exist
+2026-02-24 22:55:29.639 | 2026-02-24 21:55:29.639 UTC [99] FATAL:  database "maison" does not exist
+2026-02-24 22:55:39.670 | 2026-02-24 21:55:39.669 UTC [106] FATAL:  database "maison" does not exist
+2026-02-24 22:55:49.700 | 2026-02-24 21:55:49.700 UTC [113] FATAL:  database "maison" does not exist
+2026-02-24 16:48:56.450 | 
+2026-02-24 16:48:56.450 | Success. You can now start the database server using:
+2026-02-24 16:48:56.450 | 
+2026-02-24 16:48:56.450 |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+2026-02-24 16:48:56.450 | 
+2026-02-24 16:48:56.530 | waiting for server to start....2026-02-24 15:48:56.529 UTC [41] LOG:  starting PostgreSQL 16.12 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+2026-02-24 16:48:56.533 | 2026-02-24 15:48:56.533 UTC [41] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-02-24 16:48:56.544 | 2026-02-24 15:48:56.544 UTC [44] LOG:  database system was shut down at 2026-02-24 15:48:55 UTC
+2026-02-24 16:48:56.554 | 2026-02-24 15:48:56.554 UTC [41] LOG:  database system is ready to accept connections
+2026-02-24 16:48:56.590 |  done
+2026-02-24 16:48:56.590 | server started
+2026-02-24 16:48:56.686 | CREATE DATABASE
+2026-02-24 16:48:56.687 | 
+2026-02-24 16:48:56.688 | 
+2026-02-24 16:48:56.688 | /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/init.sql
+2026-02-24 16:48:56.845 | CREATE ROLE
+2026-02-24 16:48:56.964 | CREATE DATABASE
+2026-02-24 16:48:56.966 | GRANT
+2026-02-24 16:48:56.968 | 
+2026-02-24 16:48:56.968 | 
+2026-02-24 16:48:56.970 | waiting for server to shut down....2026-02-24 15:48:56.970 UTC [41] LOG:  received fast shutdown request
+2026-02-24 16:48:56.974 | 2026-02-24 15:48:56.974 UTC [41] LOG:  aborting any active transactions
+2026-02-24 16:48:56.979 | 2026-02-24 15:48:56.979 UTC [41] LOG:  background worker "logical replication launcher" (PID 47) exited with exit code 1
+2026-02-24 16:48:56.979 | 2026-02-24 15:48:56.979 UTC [42] LOG:  shutting down
+2026-02-24 16:48:56.983 | 2026-02-24 15:48:56.982 UTC [42] LOG:  checkpoint starting: shutdown immediate
+2026-02-24 16:48:57.416 | 2026-02-24 15:48:57.416 UTC [42] LOG:  checkpoint complete: wrote 1855 buffers (11.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.077 s, sync=0.346 s, total=0.437 s; sync files=604, longest=0.007 s, average=0.001 s; distance=8548 kB, estimate=8548 kB; lsn=0/1D4B858, redo lsn=0/1D4B858
+2026-02-24 16:48:57.431 | 2026-02-24 15:48:57.430 UTC [41] LOG:  database system is shut down
+2026-02-24 16:48:57.471 |  done
+2026-02-24 16:48:57.471 | server stopped
+2026-02-24 16:48:57.473 | 
+2026-02-24 16:48:57.473 | PostgreSQL init process complete; ready for start up.
+2026-02-24 16:48:57.473 | 
+2026-02-24 22:53:59.117 | 
+2026-02-24 22:53:59.118 | PostgreSQL Database directory appears to contain a database; Skipping initialization
+2026-02-24 22:53:59.118 | 
+2026-02-24 22:55:59.750 | 2026-02-24 21:55:59.750 UTC [121] FATAL:  database "maison" does not exist
+2026-02-24 22:56:09.805 | 2026-02-24 21:56:09.804 UTC [129] FATAL:  database "maison" does not exist
+2026-02-24 22:56:19.842 | 2026-02-24 21:56:19.841 UTC [136] FATAL:  database "maison" does not exist
+2026-02-24 22:56:29.884 | 2026-02-24 21:56:29.884 UTC [143] FATAL:  database "maison" does not exist
+2026-02-24 22:56:39.918 | 2026-02-24 21:56:39.918 UTC [150] FATAL:  database "maison" does not exist
+2026-02-24 22:56:49.954 | 2026-02-24 21:56:49.954 UTC [157] FATAL:  database "maison" does not exist
+2026-02-24 22:56:59.983 | 2026-02-24 21:56:59.983 UTC [164] FATAL:  database "maison" does not exist
+2026-02-24 22:57:10.015 | 2026-02-24 21:57:10.015 UTC [172] FATAL:  database "maison" does not exist
+2026-02-24 22:57:20.047 | 2026-02-24 21:57:20.047 UTC [179] FATAL:  database "maison" does not exist
+2026-02-24 22:57:30.085 | 2026-02-24 21:57:30.085 UTC [186] FATAL:  database "maison" does not exist
+2026-02-24 22:57:40.144 | 2026-02-24 21:57:40.144 UTC [193] FATAL:  database "maison" does not exist
+2026-02-24 22:57:50.185 | 2026-02-24 21:57:50.184 UTC [200] FATAL:  database "maison" does not exist
+2026-02-24 22:58:00.223 | 2026-02-24 21:58:00.222 UTC [207] FATAL:  database "maison" does not exist
+2026-02-24 22:58:10.270 | 2026-02-24 21:58:10.270 UTC [215] FATAL:  database "maison" does not exist
+2026-02-24 22:58:20.313 | 2026-02-24 21:58:20.313 UTC [222] FATAL:  database "maison" does not exist
+2026-02-24 22:58:30.364 | 2026-02-24 21:58:30.363 UTC [230] FATAL:  database "maison" does not exist
+2026-02-24 22:58:40.408 | 2026-02-24 21:58:40.408 UTC [237] FATAL:  database "maison" does not exist
+2026-02-24 22:58:50.449 | 2026-02-24 21:58:50.449 UTC [244] FATAL:  database "maison" does not exist
+2026-02-24 22:59:00.488 | 2026-02-24 21:59:00.488 UTC [251] FATAL:  database "maison" does not exist
+2026-02-24 22:59:01.617 | 2026-02-24 21:59:01.617 UTC [27] LOG:  checkpoint starting: time
+2026-02-24 22:59:10.561 | 2026-02-24 21:59:10.561 UTC [259] FATAL:  database "maison" does not exist
+2026-02-24 22:59:16.170 | 2026-02-24 21:59:16.170 UTC [27] LOG:  checkpoint complete: wrote 139 buffers (0.8%); 0 WAL file(s) added, 0 removed, 0 recycled; write=14.530 s, sync=0.015 s, total=14.554 s; sync files=37, longest=0.008 s, average=0.001 s; distance=0 kB, estimate=3821 kB; lsn=0/21711E0, redo lsn=0/21711A8
+2026-02-24 22:59:20.616 | 2026-02-24 21:59:20.616 UTC [266] FATAL:  database "maison" does not exist
+2026-02-24 22:59:30.641 | 2026-02-24 21:59:30.641 UTC [273] FATAL:  database "maison" does not exist
+2026-02-24 22:59:40.671 | 2026-02-24 21:59:40.670 UTC [280] FATAL:  database "maison" does not exist
+2026-02-24 22:59:50.706 | 2026-02-24 21:59:50.706 UTC [287] FATAL:  database "maison" does not exist
+2026-02-24 23:00:00.753 | 2026-02-24 22:00:00.752 UTC [295] FATAL:  database "maison" does not exist
+2026-02-24 23:00:10.793 | 2026-02-24 22:00:10.792 UTC [303] FATAL:  database "maison" does not exist
+2026-02-24 23:00:20.833 | 2026-02-24 22:00:20.832 UTC [310] FATAL:  database "maison" does not exist
+2026-02-24 23:00:30.881 | 2026-02-24 22:00:30.881 UTC [317] FATAL:  database "maison" does not exist
+2026-02-24 23:00:40.944 | 2026-02-24 22:00:40.944 UTC [324] FATAL:  database "maison" does not exist
+2026-02-24 23:00:50.986 | 2026-02-24 22:00:50.985 UTC [331] FATAL:  database "maison" does not exist
+2026-02-24 23:01:01.027 | 2026-02-24 22:01:01.027 UTC [338] FATAL:  database "maison" does not exist
+2026-02-24 23:01:11.069 | 2026-02-24 22:01:11.068 UTC [346] FATAL:  database "maison" does not exist
+2026-02-24 23:01:21.109 | 2026-02-24 22:01:21.109 UTC [353] FATAL:  database "maison" does not exist
+2026-02-24 23:01:31.148 | 2026-02-24 22:01:31.147 UTC [360] FATAL:  database "maison" does not exist
+2026-02-24 23:01:41.182 | 2026-02-24 22:01:41.182 UTC [367] FATAL:  database "maison" does not exist
+2026-02-24 23:01:51.222 | 2026-02-24 22:01:51.222 UTC [374] FATAL:  database "maison" does not exist
+2026-02-24 23:02:01.256 | 2026-02-24 22:02:01.256 UTC [381] FATAL:  database "maison" does not exist
+2026-02-24 23:02:11.291 | 2026-02-24 22:02:11.291 UTC [389] FATAL:  database "maison" does not exist
+2026-02-24 23:02:21.329 | 2026-02-24 22:02:21.329 UTC [396] FATAL:  database "maison" does not exist
+2026-02-24 23:02:31.384 | 2026-02-24 22:02:31.384 UTC [403] FATAL:  database "maison" does not exist
+2026-02-24 23:02:41.456 | 2026-02-24 22:02:41.448 UTC [410] FATAL:  database "maison" does not exist
+2026-02-24 23:02:51.513 | 2026-02-24 22:02:51.512 UTC [417] FATAL:  database "maison" does not exist
+2026-02-24 23:03:01.552 | 2026-02-24 22:03:01.552 UTC [424] FATAL:  database "maison" does not exist
+2026-02-24 23:03:11.596 | 2026-02-24 22:03:11.596 UTC [432] FATAL:  database "maison" does not exist
+2026-02-24 23:03:21.628 | 2026-02-24 22:03:21.628 UTC [439] FATAL:  database "maison" does not exist
+2026-02-24 23:03:31.673 | 2026-02-24 22:03:31.673 UTC [446] FATAL:  database "maison" does not exist
+2026-02-24 23:03:41.715 | 2026-02-24 22:03:41.715 UTC [453] FATAL:  database "maison" does not exist
+2026-02-24 23:03:51.752 | 2026-02-24 22:03:51.752 UTC [460] FATAL:  database "maison" does not exist
+2026-02-24 23:04:01.799 | 2026-02-24 22:04:01.799 UTC [467] FATAL:  database "maison" does not exist
+2026-02-24 23:04:11.832 | 2026-02-24 22:04:11.832 UTC [474] FATAL:  database "maison" does not exist
+2026-02-24 23:04:21.865 | 2026-02-24 22:04:21.864 UTC [481] FATAL:  database "maison" does not exist
+2026-02-24 23:04:31.905 | 2026-02-24 22:04:31.905 UTC [488] FATAL:  database "maison" does not exist
+2026-02-24 23:04:41.941 | 2026-02-24 22:04:41.940 UTC [495] FATAL:  database "maison" does not exist
+2026-02-24 23:04:51.970 | 2026-02-24 22:04:51.970 UTC [502] FATAL:  database "maison" does not exist
+2026-02-24 23:05:01.995 | 2026-02-24 22:05:01.995 UTC [509] FATAL:  database "maison" does not exist
+2026-02-24 23:05:12.034 | 2026-02-24 22:05:12.034 UTC [517] FATAL:  database "maison" does not exist
+2026-02-24 23:05:22.066 | 2026-02-24 22:05:22.065 UTC [524] FATAL:  database "maison" does not exist
+2026-02-24 23:05:32.090 | 2026-02-24 22:05:32.090 UTC [531] FATAL:  database "maison" does not exist
+2026-02-24 23:05:42.128 | 2026-02-24 22:05:42.128 UTC [538] FATAL:  database "maison" does not exist
+2026-02-24 23:05:52.154 | 2026-02-24 22:05:52.154 UTC [545] FATAL:  database "maison" does not exist
+2026-02-24 23:06:02.177 | 2026-02-24 22:06:02.177 UTC [553] FATAL:  database "maison" does not exist
+2026-02-24 23:06:12.205 | 2026-02-24 22:06:12.205 UTC [560] FATAL:  database "maison" does not exist
+2026-02-24 23:06:22.237 | 2026-02-24 22:06:22.237 UTC [566] FATAL:  database "maison" does not exist
+2026-02-24 23:06:32.266 | 2026-02-24 22:06:32.266 UTC [573] FATAL:  database "maison" does not exist
+2026-02-24 23:06:42.318 | 2026-02-24 22:06:42.318 UTC [580] FATAL:  database "maison" does not exist
+2026-02-24 23:06:52.457 | 2026-02-24 22:06:52.456 UTC [587] FATAL:  database "maison" does not exist
+2026-02-24 23:07:02.563 | 2026-02-24 22:07:02.562 UTC [595] FATAL:  database "maison" does not exist
+2026-02-24 23:07:12.631 | 2026-02-24 22:07:12.630 UTC [602] FATAL:  database "maison" does not exist
+2026-02-24 23:07:22.726 | 2026-02-24 22:07:22.726 UTC [609] FATAL:  database "maison" does not exist
+2026-02-24 23:07:32.769 | 2026-02-24 22:07:32.769 UTC [616] FATAL:  database "maison" does not exist
+2026-02-24 23:07:42.809 | 2026-02-24 22:07:42.809 UTC [623] FATAL:  database "maison" does not exist
+2026-02-24 23:07:52.860 | 2026-02-24 22:07:52.860 UTC [630] FATAL:  database "maison" does not exist
+2026-02-24 23:08:02.905 | 2026-02-24 22:08:02.905 UTC [638] FATAL:  database "maison" does not exist
+2026-02-24 23:08:12.948 | 2026-02-24 22:08:12.947 UTC [645] FATAL:  database "maison" does not exist
+2026-02-24 23:08:22.978 | 2026-02-24 22:08:22.978 UTC [652] FATAL:  database "maison" does not exist
+2026-02-24 23:08:33.012 | 2026-02-24 22:08:33.012 UTC [659] FATAL:  database "maison" does not exist
+2026-02-24 23:08:43.045 | 2026-02-24 22:08:43.044 UTC [666] FATAL:  database "maison" does not exist
+2026-02-24 23:08:53.072 | 2026-02-24 22:08:53.072 UTC [673] FATAL:  database "maison" does not exist
+2026-02-24 23:09:03.102 | 2026-02-24 22:09:03.102 UTC [681] FATAL:  database "maison" does not exist
+2026-02-24 23:09:13.146 | 2026-02-24 22:09:13.145 UTC [688] FATAL:  database "maison" does not exist
+2026-02-24 23:09:23.191 | 2026-02-24 22:09:23.190 UTC [696] FATAL:  database "maison" does not exist
+2026-02-24 23:09:33.229 | 2026-02-24 22:09:33.229 UTC [703] FATAL:  database "maison" does not exist
+2026-02-24 23:09:43.261 | 2026-02-24 22:09:43.261 UTC [710] FATAL:  database "maison" does not exist
+2026-02-24 23:09:53.290 | 2026-02-24 22:09:53.290 UTC [717] FATAL:  database "maison" does not exist
+2026-02-24 23:10:03.324 | 2026-02-24 22:10:03.323 UTC [725] FATAL:  database "maison" does not exist
+2026-02-24 23:10:13.357 | 2026-02-24 22:10:13.357 UTC [732] FATAL:  database "maison" does not exist
+2026-02-24 23:10:23.397 | 2026-02-24 22:10:23.397 UTC [739] FATAL:  database "maison" does not exist
+2026-02-24 23:10:33.431 | 2026-02-24 22:10:33.431 UTC [746] FATAL:  database "maison" does not exist
+2026-02-24 23:10:43.465 | 2026-02-24 22:10:43.465 UTC [753] FATAL:  database "maison" does not exist
+2026-02-24 23:10:53.508 | 2026-02-24 22:10:53.508 UTC [760] FATAL:  database "maison" does not exist
+2026-02-24 23:11:03.554 | 2026-02-24 22:11:03.554 UTC [769] FATAL:  database "maison" does not exist
+2026-02-24 23:11:13.634 | 2026-02-24 22:11:13.634 UTC [776] FATAL:  database "maison" does not exist
+2026-02-24 23:11:23.686 | 2026-02-24 22:11:23.686 UTC [783] FATAL:  database "maison" does not exist
+2026-02-24 23:11:33.721 | 2026-02-24 22:11:33.721 UTC [790] FATAL:  database "maison" does not exist
+2026-02-24 23:11:43.915 | 2026-02-24 22:11:43.915 UTC [797] FATAL:  database "maison" does not exist
+2026-02-24 23:11:53.998 | 2026-02-24 22:11:53.998 UTC [804] FATAL:  database "maison" does not exist
+2026-02-24 23:12:04.056 | 2026-02-24 22:12:04.055 UTC [812] FATAL:  database "maison" does not exist
+2026-02-24 23:12:14.092 | 2026-02-24 22:12:14.092 UTC [819] FATAL:  database "maison" does not exist
+2026-02-24 23:12:24.152 | 2026-02-24 22:12:24.152 UTC [826] FATAL:  database "maison" does not exist
+2026-02-24 23:12:34.266 | 2026-02-24 22:12:34.266 UTC [833] FATAL:  database "maison" does not exist
+2026-02-24 23:12:44.337 | 2026-02-24 22:12:44.337 UTC [840] FATAL:  database "maison" does not exist
+2026-02-24 23:12:54.375 | 2026-02-24 22:12:54.375 UTC [847] FATAL:  database "maison" does not exist
+2026-02-24 23:13:04.412 | 2026-02-24 22:13:04.412 UTC [855] FATAL:  database "maison" does not exist
+2026-02-24 23:13:14.444 | 2026-02-24 22:13:14.444 UTC [862] FATAL:  database "maison" does not exist
+2026-02-24 23:13:24.480 | 2026-02-24 22:13:24.479 UTC [869] FATAL:  database "maison" does not exist
+2026-02-24 23:13:34.513 | 2026-02-24 22:13:34.512 UTC [876] FATAL:  database "maison" does not exist
+2026-02-24 23:13:44.546 | 2026-02-24 22:13:44.546 UTC [883] FATAL:  database "maison" does not exist
+2026-02-24 23:13:54.584 | 2026-02-24 22:13:54.584 UTC [890] FATAL:  database "maison" does not exist
+2026-02-24 23:14:04.617 | 2026-02-24 22:14:04.617 UTC [898] FATAL:  database "maison" does not exist
+2026-02-24 23:14:14.672 | 2026-02-24 22:14:14.672 UTC [905] FATAL:  database "maison" does not exist
+2026-02-24 23:14:24.798 | 2026-02-24 22:14:24.798 UTC [912] FATAL:  database "maison" does not exist
+2026-02-24 23:14:34.860 | 2026-02-24 22:14:34.860 UTC [919] FATAL:  database "maison" does not exist
+2026-02-24 23:14:44.908 | 2026-02-24 22:14:44.908 UTC [926] FATAL:  database "maison" does not exist
+2026-02-24 23:14:54.948 | 2026-02-24 22:14:54.947 UTC [933] FATAL:  database "maison" does not exist
+2026-02-24 23:15:04.985 | 2026-02-24 22:15:04.985 UTC [941] FATAL:  database "maison" does not exist
+2026-02-24 23:15:15.020 | 2026-02-24 22:15:15.020 UTC [948] FATAL:  database "maison" does not exist
+2026-02-24 23:15:25.049 | 2026-02-24 22:15:25.049 UTC [955] FATAL:  database "maison" does not exist
+2026-02-24 23:15:35.086 | 2026-02-24 22:15:35.086 UTC [962] FATAL:  database "maison" does not exist
+2026-02-24 23:15:45.117 | 2026-02-24 22:15:45.116 UTC [969] FATAL:  database "maison" does not exist
+2026-02-24 23:15:55.155 | 2026-02-24 22:15:55.155 UTC [976] FATAL:  database "maison" does not exist
+2026-02-24 23:16:05.186 | 2026-02-24 22:16:05.186 UTC [984] FATAL:  database "maison" does not exist
+2026-02-24 23:16:15.224 | 2026-02-24 22:16:15.223 UTC [991] FATAL:  database "maison" does not exist
+2026-02-24 23:16:25.261 | 2026-02-24 22:16:25.261 UTC [998] FATAL:  database "maison" does not exist
+2026-02-24 23:16:35.357 | 2026-02-24 22:16:35.357 UTC [1005] FATAL:  database "maison" does not exist
+2026-02-24 23:16:45.422 | 2026-02-24 22:16:45.421 UTC [1012] FATAL:  database "maison" does not exist
+2026-02-24 23:16:55.458 | 2026-02-24 22:16:55.458 UTC [1019] FATAL:  database "maison" does not exist
+2026-02-24 23:17:05.496 | 2026-02-24 22:17:05.496 UTC [1027] FATAL:  database "maison" does not exist
+2026-02-24 23:17:15.532 | 2026-02-24 22:17:15.532 UTC [1034] FATAL:  database "maison" does not exist
+2026-02-24 23:17:25.565 | 2026-02-24 22:17:25.564 UTC [1041] FATAL:  database "maison" does not exist
+2026-02-24 23:17:35.620 | 2026-02-24 22:17:35.620 UTC [1048] FATAL:  database "maison" does not exist
+2026-02-24 23:17:45.674 | 2026-02-24 22:17:45.673 UTC [1055] FATAL:  database "maison" does not exist
+2026-02-24 23:17:55.739 | 2026-02-24 22:17:55.739 UTC [1062] FATAL:  database "maison" does not exist
+2026-02-24 23:18:05.785 | 2026-02-24 22:18:05.784 UTC [1070] FATAL:  database "maison" does not exist
+2026-02-24 23:18:15.815 | 2026-02-24 22:18:15.815 UTC [1077] FATAL:  database "maison" does not exist
+2026-02-24 23:18:25.882 | 2026-02-24 22:18:25.882 UTC [1084] FATAL:  database "maison" does not exist
+2026-02-24 23:18:35.920 | 2026-02-24 22:18:35.920 UTC [1091] FATAL:  database "maison" does not exist
+2026-02-24 23:18:45.950 | 2026-02-24 22:18:45.950 UTC [1098] FATAL:  database "maison" does not exist
+2026-02-24 23:18:56.165 | 2026-02-24 22:18:56.165 UTC [1105] FATAL:  database "maison" does not exist
+2026-02-24 23:19:06.245 | 2026-02-24 22:19:06.245 UTC [1113] FATAL:  database "maison" does not exist
+2026-02-24 23:19:16.303 | 2026-02-24 22:19:16.303 UTC [1120] FATAL:  database "maison" does not exist
+2026-02-24 23:19:26.342 | 2026-02-24 22:19:26.342 UTC [1127] FATAL:  database "maison" does not exist
+2026-02-24 23:19:36.387 | 2026-02-24 22:19:36.387 UTC [1134] FATAL:  database "maison" does not exist
+2026-02-24 23:19:46.441 | 2026-02-24 22:19:46.441 UTC [1141] FATAL:  database "maison" does not exist
+2026-02-24 23:19:56.480 | 2026-02-24 22:19:56.480 UTC [1149] FATAL:  database "maison" does not exist
+2026-02-24 23:20:06.539 | 2026-02-24 22:20:06.539 UTC [1157] FATAL:  database "maison" does not exist
+2026-02-24 23:20:16.573 | 2026-02-24 22:20:16.572 UTC [1164] FATAL:  database "maison" does not exist
+2026-02-24 23:20:26.600 | 2026-02-24 22:20:26.600 UTC [1172] FATAL:  database "maison" does not exist
+2026-02-24 23:20:36.630 | 2026-02-24 22:20:36.630 UTC [1180] FATAL:  database "maison" does not exist
+2026-02-24 23:20:46.661 | 2026-02-24 22:20:46.661 UTC [1187] FATAL:  database "maison" does not exist
+2026-02-24 23:20:56.695 | 2026-02-24 22:20:56.694 UTC [1194] FATAL:  database "maison" does not exist
+2026-02-24 23:21:06.732 | 2026-02-24 22:21:06.731 UTC [1202] FATAL:  database "maison" does not exist
+2026-02-24 23:21:16.776 | 2026-02-24 22:21:16.776 UTC [1209] FATAL:  database "maison" does not exist
+2026-02-24 23:21:26.805 | 2026-02-24 22:21:26.805 UTC [1216] FATAL:  database "maison" does not exist
+2026-02-24 23:21:36.837 | 2026-02-24 22:21:36.837 UTC [1224] FATAL:  database "maison" does not exist
+2026-02-24 23:21:46.867 | 2026-02-24 22:21:46.867 UTC [1231] FATAL:  database "maison" does not exist
+2026-02-24 23:21:56.894 | 2026-02-24 22:21:56.894 UTC [1238] FATAL:  database "maison" does not exist
+2026-02-24 23:22:06.925 | 2026-02-24 22:22:06.925 UTC [1246] FATAL:  database "maison" does not exist
+2026-02-24 23:22:16.952 | 2026-02-24 22:22:16.951 UTC [1253] FATAL:  database "maison" does not exist
+2026-02-24 23:22:26.992 | 2026-02-24 22:22:26.992 UTC [1260] FATAL:  database "maison" does not exist
+2026-02-24 23:22:37.027 | 2026-02-24 22:22:37.026 UTC [1268] FATAL:  database "maison" does not exist
+2026-02-24 23:22:47.056 | 2026-02-24 22:22:47.056 UTC [1275] FATAL:  database "maison" does not exist
+2026-02-24 23:22:57.084 | 2026-02-24 22:22:57.083 UTC [1282] FATAL:  database "maison" does not exist
+2026-02-24 23:23:07.114 | 2026-02-24 22:23:07.113 UTC [1290] FATAL:  database "maison" does not exist
+2026-02-24 23:23:17.155 | 2026-02-24 22:23:17.154 UTC [1297] FATAL:  database "maison" does not exist
+2026-02-24 23:23:27.257 | 2026-02-24 22:23:27.257 UTC [1304] FATAL:  database "maison" does not exist
+2026-02-24 23:23:37.329 | 2026-02-24 22:23:37.328 UTC [1312] FATAL:  database "maison" does not exist
+2026-02-24 23:23:47.364 | 2026-02-24 22:23:47.364 UTC [1320] FATAL:  database "maison" does not exist
+2026-02-24 23:23:57.428 | 2026-02-24 22:23:57.427 UTC [1327] FATAL:  database "maison" does not exist
+2026-02-24 23:24:01.591 | 2026-02-24 22:24:01.591 UTC [27] LOG:  checkpoint starting: time
+2026-02-24 23:24:07.478 | 2026-02-24 22:24:07.478 UTC [1335] FATAL:  database "maison" does not exist
+2026-02-24 23:24:12.206 | 2026-02-24 22:24:12.205 UTC [27] LOG:  checkpoint complete: wrote 106 buffers (0.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=10.587 s, sync=0.017 s, total=10.615 s; sync files=69, longest=0.002 s, average=0.001 s; distance=298 kB, estimate=3469 kB; lsn=0/21BBC78, redo lsn=0/21BBC40
+2026-02-24 23:24:17.528 | 2026-02-24 22:24:17.527 UTC [1343] FATAL:  database "maison" does not exist
+2026-02-24 23:24:27.574 | 2026-02-24 22:24:27.574 UTC [1351] FATAL:  database "maison" does not exist
+2026-02-24 23:24:37.644 | 2026-02-24 22:24:37.644 UTC [1360] FATAL:  database "maison" does not exist
+2026-02-24 23:24:47.698 | 2026-02-24 22:24:47.698 UTC [1367] FATAL:  database "maison" does not exist
+2026-02-24 23:24:57.730 | 2026-02-24 22:24:57.730 UTC [1374] FATAL:  database "maison" does not exist
+2026-02-24 23:25:07.759 | 2026-02-24 22:25:07.759 UTC [1382] FATAL:  database "maison" does not exist
+2026-02-24 23:25:17.789 | 2026-02-24 22:25:17.789 UTC [1389] FATAL:  database "maison" does not exist
+2026-02-24 23:25:27.821 | 2026-02-24 22:25:27.821 UTC [1396] FATAL:  database "maison" does not exist
+2026-02-24 23:25:37.863 | 2026-02-24 22:25:37.863 UTC [1404] FATAL:  database "maison" does not exist
+2026-02-24 23:25:47.899 | 2026-02-24 22:25:47.899 UTC [1411] FATAL:  database "maison" does not exist
+2026-02-24 23:25:57.931 | 2026-02-24 22:25:57.931 UTC [1418] FATAL:  database "maison" does not exist
+2026-02-24 23:26:07.980 | 2026-02-24 22:26:07.980 UTC [1426] FATAL:  database "maison" does not exist
+2026-02-24 23:26:18.020 | 2026-02-24 22:26:18.019 UTC [1433] FATAL:  database "maison" does not exist
+2026-02-24 23:26:28.094 | 2026-02-24 22:26:28.094 UTC [1440] FATAL:  database "maison" does not exist
+2026-02-24 23:26:38.132 | 2026-02-24 22:26:38.132 UTC [1448] FATAL:  database "maison" does not exist
+2026-02-24 23:26:48.172 | 2026-02-24 22:26:48.172 UTC [1455] FATAL:  database "maison" does not exist
+2026-02-24 23:26:58.212 | 2026-02-24 22:26:58.212 UTC [1462] FATAL:  database "maison" does not exist
+2026-02-24 23:27:08.244 | 2026-02-24 22:27:08.244 UTC [1470] FATAL:  database "maison" does not exist
+2026-02-24 23:27:18.306 | 2026-02-24 22:27:18.306 UTC [1477] FATAL:  database "maison" does not exist
+2026-02-24 23:27:28.357 | 2026-02-24 22:27:28.357 UTC [1484] FATAL:  database "maison" does not exist
+2026-02-24 23:27:38.393 | 2026-02-24 22:27:38.393 UTC [1492] FATAL:  database "maison" does not exist
+2026-02-24 23:27:48.490 | 2026-02-24 22:27:48.490 UTC [1499] FATAL:  database "maison" does not exist
+2026-02-24 23:27:58.526 | 2026-02-24 22:27:58.526 UTC [1506] FATAL:  database "maison" does not exist
+2026-02-24 23:28:08.591 | 2026-02-24 22:28:08.590 UTC [1514] FATAL:  database "maison" does not exist
+2026-02-24 23:28:18.622 | 2026-02-24 22:28:18.622 UTC [1521] FATAL:  database "maison" does not exist
+2026-02-24 23:28:28.639 | 2026-02-24 22:28:28.638 UTC [1528] FATAL:  database "maison" does not exist
+2026-02-24 23:28:38.808 | 2026-02-24 22:28:38.808 UTC [1536] FATAL:  database "maison" does not exist
+2026-02-24 23:28:48.891 | 2026-02-24 22:28:48.891 UTC [1543] FATAL:  database "maison" does not exist
+2026-02-24 23:28:59.018 | 2026-02-24 22:28:59.018 UTC [1550] FATAL:  database "maison" does not exist
+2026-02-24 23:29:01.283 | 2026-02-24 22:29:01.283 UTC [27] LOG:  checkpoint starting: time
+2026-02-24 23:29:09.184 | 2026-02-24 22:29:09.183 UTC [1559] FATAL:  database "maison" does not exist
+2026-02-24 23:29:10.230 | 2026-02-24 22:29:10.230 UTC [27] LOG:  checkpoint complete: wrote 89 buffers (0.5%); 0 WAL file(s) added, 0 removed, 0 recycled; write=8.915 s, sync=0.017 s, total=8.948 s; sync files=58, longest=0.002 s, average=0.001 s; distance=202 kB, estimate=3142 kB; lsn=0/21EE820, redo lsn=0/21EE7E8
+2026-02-24 23:29:19.253 | 2026-02-24 22:29:19.252 UTC [1566] FATAL:  database "maison" does not exist
+2026-02-24 23:29:29.320 | 2026-02-24 22:29:29.320 UTC [1574] FATAL:  database "maison" does not exist
+2026-02-24 23:29:39.387 | 2026-02-24 22:29:39.387 UTC [1582] FATAL:  database "maison" does not exist
+2026-02-24 23:29:49.444 | 2026-02-24 22:29:49.444 UTC [1589] FATAL:  database "maison" does not exist
+2026-02-24 23:29:59.482 | 2026-02-24 22:29:59.482 UTC [1596] FATAL:  database "maison" does not exist
+2026-02-24 23:30:09.522 | 2026-02-24 22:30:09.522 UTC [1604] FATAL:  database "maison" does not exist
+2026-02-24 23:30:19.570 | 2026-02-24 22:30:19.569 UTC [1611] FATAL:  database "maison" does not exist
+2026-02-24 23:30:29.605 | 2026-02-24 22:30:29.605 UTC [1618] FATAL:  database "maison" does not exist
+2026-02-24 23:30:39.644 | 2026-02-24 22:30:39.644 UTC [1626] FATAL:  database "maison" does not exist
+2026-02-24 23:30:49.680 | 2026-02-24 22:30:49.679 UTC [1632] FATAL:  database "maison" does not exist
+2026-02-24 23:30:59.769 | 2026-02-24 22:30:59.769 UTC [1639] FATAL:  database "maison" does not exist
+2026-02-24 23:31:09.817 | 2026-02-24 22:31:09.816 UTC [1647] FATAL:  database "maison" does not exist
+2026-02-24 23:31:19.848 | 2026-02-24 22:31:19.848 UTC [1654] FATAL:  database "maison" does not exist
+2026-02-24 23:31:29.898 | 2026-02-24 22:31:29.898 UTC [1661] FATAL:  database "maison" does not exist
+2026-02-24 23:31:39.934 | 2026-02-24 22:31:39.934 UTC [1669] FATAL:  database "maison" does not exist
+2026-02-24 23:31:49.974 | 2026-02-24 22:31:49.974 UTC [1676] FATAL:  database "maison" does not exist
+2026-02-24 23:32:00.006 | 2026-02-24 22:32:00.006 UTC [1683] FATAL:  database "maison" does not exist
+2026-02-24 23:32:10.041 | 2026-02-24 22:32:10.041 UTC [1691] FATAL:  database "maison" does not exist
+2026-02-24 23:32:20.086 | 2026-02-24 22:32:20.086 UTC [1698] FATAL:  database "maison" does not exist
+2026-02-24 23:32:30.124 | 2026-02-24 22:32:30.123 UTC [1705] FATAL:  database "maison" does not exist
+2026-02-24 23:32:40.163 | 2026-02-24 22:32:40.163 UTC [1713] FATAL:  database "maison" does not exist
+2026-02-24 23:32:50.199 | 2026-02-24 22:32:50.199 UTC [1720] FATAL:  database "maison" does not exist
+2026-02-24 23:33:00.249 | 2026-02-24 22:33:00.249 UTC [1727] FATAL:  database "maison" does not exist
+2026-02-24 23:33:10.294 | 2026-02-24 22:33:10.294 UTC [1735] FATAL:  database "maison" does not exist
+2026-02-24 23:33:20.322 | 2026-02-24 22:33:20.322 UTC [1742] FATAL:  database "maison" does not exist
+2026-02-24 23:33:30.348 | 2026-02-24 22:33:30.348 UTC [1749] FATAL:  database "maison" does not exist
+2026-02-24 23:33:40.376 | 2026-02-24 22:33:40.376 UTC [1757] FATAL:  database "maison" does not exist
+2026-02-24 23:33:50.437 | 2026-02-24 22:33:50.436 UTC [1764] FATAL:  database "maison" does not exist
+2026-02-24 23:34:00.487 | 2026-02-24 22:34:00.487 UTC [1771] FATAL:  database "maison" does not exist
+2026-02-24 23:34:01.302 | 2026-02-24 22:34:01.302 UTC [27] LOG:  checkpoint starting: time
+2026-02-24 23:34:01.825 | 2026-02-24 22:34:01.824 UTC [27] LOG:  checkpoint complete: wrote 6 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.507 s, sync=0.005 s, total=0.523 s; sync files=6, longest=0.004 s, average=0.001 s; distance=2 kB, estimate=2828 kB; lsn=0/21EF040, redo lsn=0/21EF008
+2026-02-24 23:34:10.530 | 2026-02-24 22:34:10.530 UTC [1779] FATAL:  database "maison" does not exist
+2026-02-24 23:34:20.569 | 2026-02-24 22:34:20.569 UTC [1786] FATAL:  database "maison" does not exist
+2026-02-24 23:34:30.614 | 2026-02-24 22:34:30.614 UTC [1793] FATAL:  database "maison" does not exist
+2026-02-24 23:34:40.674 | 2026-02-24 22:34:40.673 UTC [1801] FATAL:  database "maison" does not exist
+2026-02-24 23:34:50.710 | 2026-02-24 22:34:50.709 UTC [1808] FATAL:  database "maison" does not exist
+2026-02-24 23:35:00.752 | 2026-02-24 22:35:00.752 UTC [1816] FATAL:  database "maison" does not exist
+2026-02-24 23:35:10.818 | 2026-02-24 22:35:10.817 UTC [1824] FATAL:  database "maison" does not exist
+2026-02-24 23:35:20.858 | 2026-02-24 22:35:20.858 UTC [1831] FATAL:  database "maison" does not exist
+2026-02-24 23:35:30.896 | 2026-02-24 22:35:30.896 UTC [1838] FATAL:  database "maison" does not exist
+2026-02-24 23:35:40.947 | 2026-02-24 22:35:40.946 UTC [1846] FATAL:  database "maison" does not exist
+2026-02-24 23:35:50.982 | 2026-02-24 22:35:50.982 UTC [1853] FATAL:  database "maison" does not exist
+2026-02-24 23:36:01.028 | 2026-02-24 22:36:01.028 UTC [1860] FATAL:  database "maison" does not exist
+2026-02-24 23:36:11.063 | 2026-02-24 22:36:11.063 UTC [1868] FATAL:  database "maison" does not exist
+2026-02-24 23:36:21.102 | 2026-02-24 22:36:21.102 UTC [1875] FATAL:  database "maison" does not exist
+2026-02-24 23:36:31.148 | 2026-02-24 22:36:31.147 UTC [1882] FATAL:  database "maison" does not exist
+2026-02-24 23:36:41.183 | 2026-02-24 22:36:41.183 UTC [1890] FATAL:  database "maison" does not exist
+2026-02-24 23:36:51.215 | 2026-02-24 22:36:51.214 UTC [1897] FATAL:  database "maison" does not exist
+2026-02-24 23:37:01.254 | 2026-02-24 22:37:01.254 UTC [1904] FATAL:  database "maison" does not exist
+2026-02-24 23:37:11.297 | 2026-02-24 22:37:11.297 UTC [1912] FATAL:  database "maison" does not exist
+2026-02-24 23:37:21.335 | 2026-02-24 22:37:21.334 UTC [1919] FATAL:  database "maison" does not exist
+2026-02-24 23:37:31.373 | 2026-02-24 22:37:31.373 UTC [1926] FATAL:  database "maison" does not exist
+2026-02-24 23:37:41.425 | 2026-02-24 22:37:41.425 UTC [1934] FATAL:  database "maison" does not exist
+2026-02-24 23:37:51.513 | 2026-02-24 22:37:51.513 UTC [1941] FATAL:  database "maison" does not exist
+2026-02-24 23:38:01.564 | 2026-02-24 22:38:01.564 UTC [1948] FATAL:  database "maison" does not exist
+2026-02-24 23:38:11.624 | 2026-02-24 22:38:11.624 UTC [1956] FATAL:  database "maison" does not exist
+2026-02-24 23:38:21.689 | 2026-02-24 22:38:21.689 UTC [1963] FATAL:  database "maison" does not exist
+2026-02-24 23:38:31.738 | 2026-02-24 22:38:31.738 UTC [1970] FATAL:  database "maison" does not exist
+2026-02-24 23:38:41.799 | 2026-02-24 22:38:41.798 UTC [1977] FATAL:  database "maison" does not exist
+2026-02-24 23:38:51.888 | 2026-02-24 22:38:51.888 UTC [1984] FATAL:  database "maison" does not exist
+2026-02-24 23:39:01.951 | 2026-02-24 22:39:01.951 UTC [1991] FATAL:  database "maison" does not exist
+2026-02-24 23:39:11.994 | 2026-02-24 22:39:11.994 UTC [1999] FATAL:  database "maison" does not exist
+2026-02-24 23:39:22.034 | 2026-02-24 22:39:22.034 UTC [2006] FATAL:  database "maison" does not exist
+2026-02-24 23:39:32.076 | 2026-02-24 22:39:32.076 UTC [2013] FATAL:  database "maison" does not exist
+2026-02-24 23:39:42.110 | 2026-02-24 22:39:42.110 UTC [2022] FATAL:  database "maison" does not exist
+2026-02-24 23:39:52.140 | 2026-02-24 22:39:52.140 UTC [2029] FATAL:  database "maison" does not exist
+2026-02-24 23:40:02.169 | 2026-02-24 22:40:02.169 UTC [2036] FATAL:  database "maison" does not exist
+2026-02-24 23:40:12.198 | 2026-02-24 22:40:12.198 UTC [2044] FATAL:  database "maison" does not exist
+2026-02-24 23:40:22.227 | 2026-02-24 22:40:22.227 UTC [2051] FATAL:  database "maison" does not exist
+2026-02-24 23:40:32.267 | 2026-02-24 22:40:32.267 UTC [2058] FATAL:  database "maison" does not exist
+2026-02-24 23:40:42.307 | 2026-02-24 22:40:42.307 UTC [2066] FATAL:  database "maison" does not exist
+2026-02-24 23:40:52.342 | 2026-02-24 22:40:52.342 UTC [2073] FATAL:  database "maison" does not exist
+2026-02-24 23:41:02.371 | 2026-02-24 22:41:02.371 UTC [2080] FATAL:  database "maison" does not exist
+2026-02-24 23:41:12.413 | 2026-02-24 22:41:12.413 UTC [2088] FATAL:  database "maison" does not exist
+2026-02-24 23:41:22.608 | 2026-02-24 22:41:22.607 UTC [2096] FATAL:  database "maison" does not exist
+2026-02-24 23:41:32.647 | 2026-02-24 22:41:32.646 UTC [2103] FATAL:  database "maison" does not exist
+2026-02-24 23:41:42.683 | 2026-02-24 22:41:42.683 UTC [2111] FATAL:  database "maison" does not exist
+2026-02-24 23:41:52.726 | 2026-02-24 22:41:52.726 UTC [2118] FATAL:  database "maison" does not exist
+2026-02-24 23:42:02.792 | 2026-02-24 22:42:02.791 UTC [2125] FATAL:  database "maison" does not exist
+2026-02-24 23:42:12.841 | 2026-02-24 22:42:12.840 UTC [2133] FATAL:  database "maison" does not exist
+2026-02-24 23:42:22.910 | 2026-02-24 22:42:22.909 UTC [2140] FATAL:  database "maison" does not exist
+2026-02-24 23:42:32.948 | 2026-02-24 22:42:32.947 UTC [2147] FATAL:  database "maison" does not exist
+2026-02-24 23:42:42.991 | 2026-02-24 22:42:42.991 UTC [2156] FATAL:  database "maison" does not exist
+2026-02-24 23:42:53.027 | 2026-02-24 22:42:53.027 UTC [2163] FATAL:  database "maison" does not exist
+2026-02-24 23:43:03.062 | 2026-02-24 22:43:03.062 UTC [2170] FATAL:  database "maison" does not exist
+2026-02-24 23:43:13.096 | 2026-02-24 22:43:13.096 UTC [2177] FATAL:  database "maison" does not exist
+2026-02-24 23:43:23.141 | 2026-02-24 22:43:23.141 UTC [2184] FATAL:  database "maison" does not exist
+2026-02-24 23:43:33.169 | 2026-02-24 22:43:33.168 UTC [2191] FATAL:  database "maison" does not exist
+2026-02-24 23:43:43.196 | 2026-02-24 22:43:43.196 UTC [2199] FATAL:  database "maison" does not exist
+2026-02-24 23:43:53.225 | 2026-02-24 22:43:53.225 UTC [2206] FATAL:  database "maison" does not exist
+2026-02-24 23:44:03.275 | 2026-02-24 22:44:03.274 UTC [2213] FATAL:  database "maison" does not exist
+2026-02-24 23:44:13.307 | 2026-02-24 22:44:13.307 UTC [2221] FATAL:  database "maison" does not exist
+2026-02-24 23:44:23.340 | 2026-02-24 22:44:23.339 UTC [2228] FATAL:  database "maison" does not exist
+2026-02-24 23:44:33.370 | 2026-02-24 22:44:33.370 UTC [2235] FATAL:  database "maison" does not exist
+2026-02-24 23:44:43.400 | 2026-02-24 22:44:43.400 UTC [2243] FATAL:  database "maison" does not exist
+2026-02-24 23:44:53.433 | 2026-02-24 22:44:53.433 UTC [2250] FATAL:  database "maison" does not exist
+2026-02-24 23:45:03.460 | 2026-02-24 22:45:03.460 UTC [2257] FATAL:  database "maison" does not exist
+2026-02-24 23:45:13.490 | 2026-02-24 22:45:13.490 UTC [2264] FATAL:  database "maison" does not exist
+2026-02-24 23:45:23.525 | 2026-02-24 22:45:23.524 UTC [2271] FATAL:  database "maison" does not exist
+2026-02-24 23:45:33.558 | 2026-02-24 22:45:33.558 UTC [2279] FATAL:  database "maison" does not exist
+2026-02-24 23:45:43.596 | 2026-02-24 22:45:43.596 UTC [2286] FATAL:  database "maison" does not exist
+2026-02-24 23:45:53.680 | 2026-02-24 22:45:53.680 UTC [2293] FATAL:  database "maison" does not exist
+2026-02-24 23:46:03.713 | 2026-02-24 22:46:03.713 UTC [2301] FATAL:  database "maison" does not exist
+2026-02-24 23:46:13.761 | 2026-02-24 22:46:13.761 UTC [2309] FATAL:  database "maison" does not exist
+2026-02-24 23:46:23.804 | 2026-02-24 22:46:23.804 UTC [2316] FATAL:  database "maison" does not exist
+2026-02-24 23:46:33.849 | 2026-02-24 22:46:33.849 UTC [2324] FATAL:  database "maison" does not exist
+2026-02-24 23:46:43.913 | 2026-02-24 22:46:43.913 UTC [2331] FATAL:  database "maison" does not exist
+2026-02-24 23:46:53.949 | 2026-02-24 22:46:53.949 UTC [2338] FATAL:  database "maison" does not exist
+2026-02-24 23:47:03.984 | 2026-02-24 22:47:03.983 UTC [2346] FATAL:  database "maison" does not exist
+2026-02-24 23:47:14.018 | 2026-02-24 22:47:14.018 UTC [2353] FATAL:  database "maison" does not exist
+2026-02-24 23:47:24.058 | 2026-02-24 22:47:24.057 UTC [2360] FATAL:  database "maison" does not exist
+2026-02-24 23:47:34.094 | 2026-02-24 22:47:34.094 UTC [2368] FATAL:  database "maison" does not exist
+2026-02-24 23:47:44.131 | 2026-02-24 22:47:44.131 UTC [2375] FATAL:  database "maison" does not exist
+2026-02-24 23:47:54.163 | 2026-02-24 22:47:54.163 UTC [2382] FATAL:  database "maison" does not exist
+2026-02-24 23:48:04.211 | 2026-02-24 22:48:04.211 UTC [2390] FATAL:  database "maison" does not exist
+2026-02-24 23:48:14.261 | 2026-02-24 22:48:14.261 UTC [2397] FATAL:  database "maison" does not exist
+2026-02-24 23:48:24.312 | 2026-02-24 22:48:24.312 UTC [2404] FATAL:  database "maison" does not exist
+2026-02-24 23:48:34.350 | 2026-02-24 22:48:34.350 UTC [2412] FATAL:  database "maison" does not exist
+2026-02-24 23:48:44.389 | 2026-02-24 22:48:44.389 UTC [2420] FATAL:  database "maison" does not exist
+2026-02-24 23:48:54.426 | 2026-02-24 22:48:54.425 UTC [2427] FATAL:  database "maison" does not exist
+2026-02-24 23:49:04.477 | 2026-02-24 22:49:04.477 UTC [2435] FATAL:  database "maison" does not exist
+2026-02-24 23:49:14.523 | 2026-02-24 22:49:14.522 UTC [2442] FATAL:  database "maison" does not exist
+2026-02-24 23:49:24.566 | 2026-02-24 22:49:24.566 UTC [2449] FATAL:  database "maison" does not exist
+2026-02-24 23:49:34.614 | 2026-02-24 22:49:34.614 UTC [2457] FATAL:  database "maison" does not exist
+2026-02-24 23:49:44.669 | 2026-02-24 22:49:44.669 UTC [2465] FATAL:  database "maison" does not exist
+2026-02-24 23:49:54.725 | 2026-02-24 22:49:54.724 UTC [2472] FATAL:  database "maison" does not exist
+2026-02-24 23:50:04.772 | 2026-02-24 22:50:04.772 UTC [2480] FATAL:  database "maison" does not exist
+2026-02-24 23:50:14.827 | 2026-02-24 22:50:14.826 UTC [2487] FATAL:  database "maison" does not exist
+2026-02-24 23:50:24.878 | 2026-02-24 22:50:24.878 UTC [2494] FATAL:  database "maison" does not exist
+2026-02-24 23:50:34.964 | 2026-02-24 22:50:34.963 UTC [2502] FATAL:  database "maison" does not exist
+2026-02-24 23:50:45.014 | 2026-02-24 22:50:45.014 UTC [2509] FATAL:  database "maison" does not exist
+2026-02-24 23:50:55.054 | 2026-02-24 22:50:55.054 UTC [2516] FATAL:  database "maison" does not exist
+2026-02-24 23:51:05.122 | 2026-02-24 22:51:05.122 UTC [2524] FATAL:  database "maison" does not exist
+2026-02-24 23:51:15.225 | 2026-02-24 22:51:15.224 UTC [2531] FATAL:  database "maison" does not exist
+2026-02-24 23:51:25.265 | 2026-02-24 22:51:25.265 UTC [2538] FATAL:  database "maison" does not exist
+2026-02-24 23:51:35.308 | 2026-02-24 22:51:35.307 UTC [2546] FATAL:  database "maison" does not exist
+2026-02-24 23:51:45.376 | 2026-02-24 22:51:45.376 UTC [2553] FATAL:  database "maison" does not exist
+2026-02-24 23:51:55.433 | 2026-02-24 22:51:55.433 UTC [2560] FATAL:  database "maison" does not exist
+2026-02-24 23:52:05.479 | 2026-02-24 22:52:05.479 UTC [2568] FATAL:  database "maison" does not exist
+2026-02-24 23:52:15.527 | 2026-02-24 22:52:15.527 UTC [2575] FATAL:  database "maison" does not exist
+2026-02-24 23:52:25.556 | 2026-02-24 22:52:25.556 UTC [2582] FATAL:  database "maison" does not exist
+2026-02-24 23:52:35.585 | 2026-02-24 22:52:35.585 UTC [2589] FATAL:  database "maison" does not exist
+2026-02-24 23:52:45.616 | 2026-02-24 22:52:45.615 UTC [2596] FATAL:  database "maison" does not exist
+2026-02-24 23:52:55.643 | 2026-02-24 22:52:55.643 UTC [2603] FATAL:  database "maison" does not exist
+2026-02-24 23:53:05.675 | 2026-02-24 22:53:05.675 UTC [2611] FATAL:  database "maison" does not exist
+2026-02-24 23:53:15.706 | 2026-02-24 22:53:15.706 UTC [2618] FATAL:  database "maison" does not exist
+2026-02-24 23:53:25.742 | 2026-02-24 22:53:25.742 UTC [2625] FATAL:  database "maison" does not exist
+2026-02-24 23:53:35.801 | 2026-02-24 22:53:35.800 UTC [2634] FATAL:  database "maison" does not exist
+2026-02-24 23:53:45.841 | 2026-02-24 22:53:45.841 UTC [2641] FATAL:  database "maison" does not exist
+2026-02-24 23:53:55.879 | 2026-02-24 22:53:55.879 UTC [2648] FATAL:  database "maison" does not exist
+2026-02-24 23:54:05.928 | 2026-02-24 22:54:05.927 UTC [2657] FATAL:  database "maison" does not exist
+2026-02-24 23:54:15.971 | 2026-02-24 22:54:15.970 UTC [2665] FATAL:  database "maison" does not exist
+2026-02-24 23:54:26.003 | 2026-02-24 22:54:26.003 UTC [2672] FATAL:  database "maison" does not exist
+2026-02-24 23:54:36.035 | 2026-02-24 22:54:36.035 UTC [2680] FATAL:  database "maison" does not exist
+2026-02-24 23:54:46.065 | 2026-02-24 22:54:46.064 UTC [2687] FATAL:  database "maison" does not exist
+2026-02-24 23:54:56.114 | 2026-02-24 22:54:56.113 UTC [2694] FATAL:  database "maison" does not exist
+2026-02-24 23:55:06.155 | 2026-02-24 22:55:06.155 UTC [2702] FATAL:  database "maison" does not exist
+2026-02-24 23:55:16.199 | 2026-02-24 22:55:16.198 UTC [2709] FATAL:  database "maison" does not exist
+2026-02-24 23:55:26.241 | 2026-02-24 22:55:26.240 UTC [2717] FATAL:  database "maison" does not exist
+2026-02-24 23:55:36.344 | 2026-02-24 22:55:36.343 UTC [2725] FATAL:  database "maison" does not exist
+2026-02-24 23:55:46.391 | 2026-02-24 22:55:46.391 UTC [2736] FATAL:  database "maison" does not exist
+2026-02-24 23:55:56.431 | 2026-02-24 22:55:56.430 UTC [2743] FATAL:  database "maison" does not exist
+2026-02-24 23:56:06.469 | 2026-02-24 22:56:06.469 UTC [2751] FATAL:  database "maison" does not exist
+2026-02-24 23:56:16.511 | 2026-02-24 22:56:16.510 UTC [2758] FATAL:  database "maison" does not exist
+2026-02-24 23:56:26.552 | 2026-02-24 22:56:26.552 UTC [2765] FATAL:  database "maison" does not exist
+2026-02-24 23:56:36.599 | 2026-02-24 22:56:36.598 UTC [2775] FATAL:  database "maison" does not exist
+2026-02-24 23:56:46.644 | 2026-02-24 22:56:46.644 UTC [2782] FATAL:  database "maison" does not exist
+2026-02-24 23:56:56.675 | 2026-02-24 22:56:56.674 UTC [2789] FATAL:  database "maison" does not exist
+2026-02-24 23:57:06.709 | 2026-02-24 22:57:06.709 UTC [2797] FATAL:  database "maison" does not exist
+2026-02-24 23:57:16.739 | 2026-02-24 22:57:16.739 UTC [2804] FATAL:  database "maison" does not exist
+2026-02-24 23:57:26.770 | 2026-02-24 22:57:26.769 UTC [2811] FATAL:  database "maison" does not exist
+2026-02-24 23:57:36.802 | 2026-02-24 22:57:36.802 UTC [2819] FATAL:  database "maison" does not exist
+2026-02-24 23:57:46.842 | 2026-02-24 22:57:46.841 UTC [2826] FATAL:  database "maison" does not exist
+2026-02-24 23:57:56.913 | 2026-02-24 22:57:56.912 UTC [2833] FATAL:  database "maison" does not exist
+2026-02-24 23:58:06.960 | 2026-02-24 22:58:06.960 UTC [2841] FATAL:  database "maison" does not exist
+2026-02-24 23:58:16.998 | 2026-02-24 22:58:16.998 UTC [2848] FATAL:  database "maison" does not exist
+2026-02-24 23:58:27.037 | 2026-02-24 22:58:27.037 UTC [2856] FATAL:  database "maison" does not exist
+2026-02-24 23:58:37.097 | 2026-02-24 22:58:37.096 UTC [2864] FATAL:  database "maison" does not exist
+2026-02-24 23:58:47.129 | 2026-02-24 22:58:47.129 UTC [2871] FATAL:  database "maison" does not exist
+2026-02-24 23:58:57.157 | 2026-02-24 22:58:57.157 UTC [2878] FATAL:  database "maison" does not exist
+2026-02-24 23:59:07.194 | 2026-02-24 22:59:07.194 UTC [2886] FATAL:  database "maison" does not exist
+2026-02-24 23:59:17.222 | 2026-02-24 22:59:17.221 UTC [2893] FATAL:  database "maison" does not exist
+2026-02-24 23:59:27.259 | 2026-02-24 22:59:27.259 UTC [2899] FATAL:  database "maison" does not exist
+2026-02-24 23:59:37.293 | 2026-02-24 22:59:37.293 UTC [2907] FATAL:  database "maison" does not exist
+2026-02-24 23:59:47.325 | 2026-02-24 22:59:47.325 UTC [2914] FATAL:  database "maison" does not exist
+2026-02-24 23:59:57.357 | 2026-02-24 22:59:57.357 UTC [2921] FATAL:  database "maison" does not exist
+2026-02-25 00:00:07.391 | 2026-02-24 23:00:07.391 UTC [2929] FATAL:  database "maison" does not exist
+2026-02-25 00:00:17.424 | 2026-02-24 23:00:17.424 UTC [2936] FATAL:  database "maison" does not exist
+2026-02-25 00:00:27.461 | 2026-02-24 23:00:27.460 UTC [2943] FATAL:  database "maison" does not exist
+2026-02-25 00:00:37.502 | 2026-02-24 23:00:37.502 UTC [2951] FATAL:  database "maison" does not exist
+2026-02-25 00:00:47.537 | 2026-02-24 23:00:47.537 UTC [2958] FATAL:  database "maison" does not exist
+2026-02-25 00:00:57.579 | 2026-02-24 23:00:57.579 UTC [2965] FATAL:  database "maison" does not exist
+2026-02-25 00:01:07.615 | 2026-02-24 23:01:07.615 UTC [2973] FATAL:  database "maison" does not exist
+2026-02-25 00:01:17.662 | 2026-02-24 23:01:17.661 UTC [2980] FATAL:  database "maison" does not exist
+2026-02-25 00:01:27.694 | 2026-02-24 23:01:27.694 UTC [2987] FATAL:  database "maison" does not exist
+2026-02-25 00:01:37.742 | 2026-02-24 23:01:37.742 UTC [2995] FATAL:  database "maison" does not exist
+2026-02-25 00:01:47.793 | 2026-02-24 23:01:47.793 UTC [3002] FATAL:  database "maison" does not exist
+2026-02-25 00:01:57.835 | 2026-02-24 23:01:57.834 UTC [3008] FATAL:  database "maison" does not exist
+2026-02-25 00:02:07.899 | 2026-02-24 23:02:07.899 UTC [3015] FATAL:  database "maison" does not exist
+2026-02-25 00:02:17.936 | 2026-02-24 23:02:17.936 UTC [3022] FATAL:  database "maison" does not exist
+2026-02-25 00:02:27.974 | 2026-02-24 23:02:27.974 UTC [3029] FATAL:  database "maison" does not exist
+2026-02-25 00:02:38.037 | 2026-02-24 23:02:38.037 UTC [3037] FATAL:  database "maison" does not exist
+2026-02-25 00:02:48.077 | 2026-02-24 23:02:48.076 UTC [3044] FATAL:  database "maison" does not exist
+2026-02-25 00:02:58.109 | 2026-02-24 23:02:58.109 UTC [3051] FATAL:  database "maison" does not exist
+2026-02-25 00:03:08.155 | 2026-02-24 23:03:08.154 UTC [3059] FATAL:  database "maison" does not exist
+2026-02-25 00:03:18.191 | 2026-02-24 23:03:18.191 UTC [3066] FATAL:  database "maison" does not exist
+2026-02-25 00:03:28.236 | 2026-02-24 23:03:28.236 UTC [3073] FATAL:  database "maison" does not exist
+2026-02-25 00:03:38.280 | 2026-02-24 23:03:38.280 UTC [3081] FATAL:  database "maison" does not exist
+2026-02-25 00:03:48.321 | 2026-02-24 23:03:48.320 UTC [3088] FATAL:  database "maison" does not exist
+2026-02-25 00:03:58.357 | 2026-02-24 23:03:58.356 UTC [3095] FATAL:  database "maison" does not exist
+2026-02-25 00:04:08.397 | 2026-02-24 23:04:08.396 UTC [3103] FATAL:  database "maison" does not exist
+2026-02-25 00:04:18.464 | 2026-02-24 23:04:18.464 UTC [3110] FATAL:  database "maison" does not exist
+2026-02-25 00:04:28.507 | 2026-02-24 23:04:28.507 UTC [3117] FATAL:  database "maison" does not exist
+2026-02-25 00:04:38.540 | 2026-02-24 23:04:38.539 UTC [3125] FATAL:  database "maison" does not exist
+2026-02-25 00:04:48.587 | 2026-02-24 23:04:48.587 UTC [3132] FATAL:  database "maison" does not exist
+2026-02-25 00:04:58.622 | 2026-02-24 23:04:58.621 UTC [3138] FATAL:  database "maison" does not exist
+2026-02-25 00:05:08.667 | 2026-02-24 23:05:08.666 UTC [3146] FATAL:  database "maison" does not exist
+2026-02-25 00:05:18.735 | 2026-02-24 23:05:18.735 UTC [3153] FATAL:  database "maison" does not exist
+2026-02-25 00:05:28.765 | 2026-02-24 23:05:28.765 UTC [3160] FATAL:  database "maison" does not exist
+2026-02-25 00:05:38.802 | 2026-02-24 23:05:38.802 UTC [3168] FATAL:  database "maison" does not exist
+2026-02-25 00:05:48.840 | 2026-02-24 23:05:48.839 UTC [3175] FATAL:  database "maison" does not exist
+2026-02-25 00:05:58.874 | 2026-02-24 23:05:58.874 UTC [3182] FATAL:  database "maison" does not exist
+2026-02-25 00:06:08.902 | 2026-02-24 23:06:08.902 UTC [3190] FATAL:  database "maison" does not exist
+2026-02-25 00:06:18.936 | 2026-02-24 23:06:18.935 UTC [3197] FATAL:  database "maison" does not exist
+2026-02-25 00:06:28.972 | 2026-02-24 23:06:28.972 UTC [3204] FATAL:  database "maison" does not exist
+2026-02-25 00:06:39.008 | 2026-02-24 23:06:39.007 UTC [3212] FATAL:  database "maison" does not exist
+2026-02-25 00:06:49.072 | 2026-02-24 23:06:49.072 UTC [3219] FATAL:  database "maison" does not exist
+2026-02-25 00:06:59.116 | 2026-02-24 23:06:59.116 UTC [3226] FATAL:  database "maison" does not exist
+2026-02-25 00:07:09.142 | 2026-02-24 23:07:09.142 UTC [3234] FATAL:  database "maison" does not exist
+2026-02-25 00:07:19.173 | 2026-02-24 23:07:19.173 UTC [3241] FATAL:  database "maison" does not exist
+2026-02-25 00:07:29.205 | 2026-02-24 23:07:29.205 UTC [3248] FATAL:  database "maison" does not exist
+2026-02-25 00:07:39.237 | 2026-02-24 23:07:39.237 UTC [3255] FATAL:  database "maison" does not exist
+2026-02-25 00:07:49.267 | 2026-02-24 23:07:49.266 UTC [3262] FATAL:  database "maison" does not exist
+2026-02-25 00:07:59.300 | 2026-02-24 23:07:59.299 UTC [3269] FATAL:  database "maison" does not exist
+2026-02-25 00:08:09.333 | 2026-02-24 23:08:09.333 UTC [3277] FATAL:  database "maison" does not exist
+2026-02-25 00:08:19.390 | 2026-02-24 23:08:19.390 UTC [3284] FATAL:  database "maison" does not exist
+2026-02-25 00:08:29.423 | 2026-02-24 23:08:29.423 UTC [3291] FATAL:  database "maison" does not exist
+2026-02-25 00:08:39.463 | 2026-02-24 23:08:39.462 UTC [3300] FATAL:  database "maison" does not exist
+2026-02-25 00:08:49.499 | 2026-02-24 23:08:49.499 UTC [3308] FATAL:  database "maison" does not exist
+2026-02-25 00:08:59.554 | 2026-02-24 23:08:59.554 UTC [3315] FATAL:  database "maison" does not exist
+2026-02-25 00:09:09.604 | 2026-02-24 23:09:09.604 UTC [3323] FATAL:  database "maison" does not exist
+2026-02-25 00:09:19.673 | 2026-02-24 23:09:19.672 UTC [3331] FATAL:  database "maison" does not exist
+2026-02-25 00:09:29.732 | 2026-02-24 23:09:29.731 UTC [3338] FATAL:  database "maison" does not exist
+2026-02-25 00:09:39.774 | 2026-02-24 23:09:39.774 UTC [3346] FATAL:  database "maison" does not exist
+2026-02-25 00:09:49.810 | 2026-02-24 23:09:49.810 UTC [3353] FATAL:  database "maison" does not exist
+2026-02-25 00:09:59.844 | 2026-02-24 23:09:59.844 UTC [3360] FATAL:  database "maison" does not exist
+2026-02-25 00:10:09.878 | 2026-02-24 23:10:09.878 UTC [3368] FATAL:  database "maison" does not exist
+2026-02-25 00:10:19.913 | 2026-02-24 23:10:19.912 UTC [3375] FATAL:  database "maison" does not exist
+2026-02-25 00:10:29.947 | 2026-02-24 23:10:29.946 UTC [3382] FATAL:  database "maison" does not exist
+2026-02-25 00:10:39.986 | 2026-02-24 23:10:39.986 UTC [3390] FATAL:  database "maison" does not exist
+2026-02-25 00:10:50.026 | 2026-02-24 23:10:50.026 UTC [3397] FATAL:  database "maison" does not exist
+2026-02-25 00:11:00.059 | 2026-02-24 23:11:00.059 UTC [3404] FATAL:  database "maison" does not exist
+2026-02-25 00:11:10.108 | 2026-02-24 23:11:10.108 UTC [3412] FATAL:  database "maison" does not exist
+2026-02-25 00:11:20.147 | 2026-02-24 23:11:20.146 UTC [3419] FATAL:  database "maison" does not exist
+2026-02-25 00:11:30.182 | 2026-02-24 23:11:30.182 UTC [3426] FATAL:  database "maison" does not exist
+2026-02-25 00:11:40.227 | 2026-02-24 23:11:40.227 UTC [3434] FATAL:  database "maison" does not exist
+2026-02-25 00:11:50.284 | 2026-02-24 23:11:50.284 UTC [3441] FATAL:  database "maison" does not exist
+2026-02-25 00:12:00.336 | 2026-02-24 23:12:00.335 UTC [3448] FATAL:  database "maison" does not exist
+2026-02-25 00:12:10.378 | 2026-02-24 23:12:10.377 UTC [3457] FATAL:  database "maison" does not exist
+2026-02-25 00:12:20.423 | 2026-02-24 23:12:20.423 UTC [3464] FATAL:  database "maison" does not exist
+2026-02-25 00:12:30.468 | 2026-02-24 23:12:30.468 UTC [3471] FATAL:  database "maison" does not exist
+2026-02-25 00:12:40.504 | 2026-02-24 23:12:40.504 UTC [3479] FATAL:  database "maison" does not exist
+2026-02-25 00:12:50.544 | 2026-02-24 23:12:50.544 UTC [3486] FATAL:  database "maison" does not exist
+2026-02-25 00:13:00.592 | 2026-02-24 23:13:00.591 UTC [3493] FATAL:  database "maison" does not exist
+2026-02-25 00:13:10.627 | 2026-02-24 23:13:10.627 UTC [3501] FATAL:  database "maison" does not exist
+2026-02-25 00:13:20.656 | 2026-02-24 23:13:20.656 UTC [3508] FATAL:  database "maison" does not exist
+2026-02-25 00:13:30.687 | 2026-02-24 23:13:30.686 UTC [3515] FATAL:  database "maison" does not exist
+2026-02-25 00:13:40.724 | 2026-02-24 23:13:40.724 UTC [3523] FATAL:  database "maison" does not exist
+2026-02-25 00:13:50.767 | 2026-02-24 23:13:50.767 UTC [3530] FATAL:  database "maison" does not exist
+2026-02-25 00:14:00.808 | 2026-02-24 23:14:00.808 UTC [3537] FATAL:  database "maison" does not exist
+2026-02-25 00:14:10.850 | 2026-02-24 23:14:10.850 UTC [3545] FATAL:  database "maison" does not exist
+2026-02-25 00:14:20.892 | 2026-02-24 23:14:20.892 UTC [3552] FATAL:  database "maison" does not exist
+2026-02-25 00:14:30.928 | 2026-02-24 23:14:30.928 UTC [3559] FATAL:  database "maison" does not exist
+2026-02-25 00:14:40.972 | 2026-02-24 23:14:40.972 UTC [3567] FATAL:  database "maison" does not exist
+2026-02-25 00:14:51.012 | 2026-02-24 23:14:51.012 UTC [3574] FATAL:  database "maison" does not exist
+2026-02-25 00:15:01.062 | 2026-02-24 23:15:01.062 UTC [3581] FATAL:  database "maison" does not exist
+2026-02-25 00:15:11.100 | 2026-02-24 23:15:11.100 UTC [3588] FATAL:  database "maison" does not exist
+2026-02-25 00:15:21.131 | 2026-02-24 23:15:21.130 UTC [3595] FATAL:  database "maison" does not exist
+2026-02-25 00:15:31.160 | 2026-02-24 23:15:31.159 UTC [3602] FATAL:  database "maison" does not exist
+2026-02-25 00:15:41.238 | 2026-02-24 23:15:41.237 UTC [3610] FATAL:  database "maison" does not exist
+2026-02-25 00:15:51.312 | 2026-02-24 23:15:51.312 UTC [3617] FATAL:  database "maison" does not exist
+2026-02-25 00:16:01.645 | 2026-02-24 23:16:01.645 UTC [3624] FATAL:  database "maison" does not exist
+2026-02-25 00:16:11.804 | 2026-02-24 23:16:11.804 UTC [3632] FATAL:  database "maison" does not exist
+2026-02-25 00:16:21.933 | 2026-02-24 23:16:21.932 UTC [3639] FATAL:  database "maison" does not exist
+2026-02-25 00:16:32.053 | 2026-02-24 23:16:32.052 UTC [3646] FATAL:  database "maison" does not exist
+2026-02-25 00:16:42.201 | 2026-02-24 23:16:42.201 UTC [3654] FATAL:  database "maison" does not exist
+2026-02-25 00:16:52.323 | 2026-02-24 23:16:52.322 UTC [3661] FATAL:  database "maison" does not exist
+2026-02-25 00:17:02.518 | 2026-02-24 23:17:02.517 UTC [3668] FATAL:  database "maison" does not exist
+2026-02-25 00:17:12.766 | 2026-02-24 23:17:12.761 UTC [3676] FATAL:  database "maison" does not exist
+2026-02-25 00:17:22.987 | 2026-02-24 23:17:22.985 UTC [3683] FATAL:  database "maison" does not exist
+2026-02-25 00:17:28.699 | 2026-02-24 23:17:28.699 UTC [1] LOG:  received fast shutdown request
+2026-02-25 00:17:28.715 | 2026-02-24 23:17:28.714 UTC [1] LOG:  aborting any active transactions
+2026-02-25 00:17:28.731 | 2026-02-24 23:17:28.731 UTC [1] LOG:  background worker "logical replication launcher" (PID 32) exited with exit code 1
+2026-02-25 00:17:28.742 | 2026-02-24 23:17:28.741 UTC [27] LOG:  shutting down
+2026-02-25 00:17:28.753 | 2026-02-24 23:17:28.753 UTC [27] LOG:  checkpoint starting: shutdown immediate
+2026-02-25 00:17:28.877 | 2026-02-24 23:17:28.877 UTC [27] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.068 s, sync=0.011 s, total=0.135 s; sync files=4, longest=0.007 s, average=0.003 s; distance=0 kB, estimate=2545 kB; lsn=0/21EF0F0, redo lsn=0/21EF0F0
+2026-02-25 00:17:28.901 | 2026-02-24 23:17:28.901 UTC [1] LOG:  database system is shut down
+2026-02-25 00:18:59.212 | 2026-02-24 23:18:59.211 UTC [1] LOG:  starting PostgreSQL 16.12 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+2026-02-25 00:18:59.212 | 2026-02-24 23:18:59.212 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-02-25 00:18:59.212 | 2026-02-24 23:18:59.212 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2026-02-25 00:18:59.218 | 2026-02-24 23:18:59.217 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-02-25 00:18:59.227 | 2026-02-24 23:18:59.227 UTC [30] LOG:  database system was shut down at 2026-02-24 23:17:28 UTC
+2026-02-25 00:18:59.246 | 2026-02-24 23:18:59.246 UTC [1] LOG:  database system is ready to accept connections
+2026-02-25 00:19:09.162 | 2026-02-24 23:19:09.162 UTC [40] FATAL:  database "maison" does not exist
+2026-02-25 00:19:19.211 | 2026-02-24 23:19:19.211 UTC [49] FATAL:  database "maison" does not exist
+2026-02-25 00:19:29.243 | 2026-02-24 23:19:29.242 UTC [56] FATAL:  database "maison" does not exist
+2026-02-25 00:19:39.310 | 2026-02-24 23:19:39.310 UTC [64] FATAL:  database "maison" does not exist
+2026-02-25 00:19:49.339 | 2026-02-24 23:19:49.339 UTC [71] FATAL:  database "maison" does not exist
+2026-02-25 00:19:59.377 | 2026-02-24 23:19:59.377 UTC [79] FATAL:  database "maison" does not exist
+2026-02-25 00:20:09.420 | 2026-02-24 23:20:09.420 UTC [86] FATAL:  database "maison" does not exist
+2026-02-25 00:20:19.450 | 2026-02-24 23:20:19.450 UTC [93] FATAL:  database "maison" does not exist
+2026-02-25 00:20:29.484 | 2026-02-24 23:20:29.484 UTC [101] FATAL:  database "maison" does not exist
+2026-02-25 00:20:39.519 | 2026-02-24 23:20:39.518 UTC [110] FATAL:  database "maison" does not exist
+2026-02-25 00:20:49.550 | 2026-02-24 23:20:49.550 UTC [117] FATAL:  database "maison" does not exist
+2026-02-25 00:20:59.584 | 2026-02-24 23:20:59.584 UTC [125] FATAL:  database "maison" does not exist
+2026-02-25 00:21:09.630 | 2026-02-24 23:21:09.630 UTC [132] FATAL:  database "maison" does not exist
+2026-02-25 00:21:19.677 | 2026-02-24 23:21:19.677 UTC [139] FATAL:  database "maison" does not exist
+2026-02-25 00:21:29.708 | 2026-02-24 23:21:29.708 UTC [147] FATAL:  database "maison" does not exist
+2026-02-25 00:21:39.739 | 2026-02-24 23:21:39.739 UTC [154] FATAL:  database "maison" does not exist
+2026-02-25 00:21:49.775 | 2026-02-24 23:21:49.774 UTC [161] FATAL:  database "maison" does not exist
+2026-02-25 00:21:59.810 | 2026-02-24 23:21:59.810 UTC [169] FATAL:  database "maison" does not exist
+2026-02-25 00:22:09.851 | 2026-02-24 23:22:09.851 UTC [176] FATAL:  database "maison" does not exist
+2026-02-25 00:22:19.883 | 2026-02-24 23:22:19.883 UTC [183] FATAL:  database "maison" does not exist
+2026-02-25 00:22:29.946 | 2026-02-24 23:22:29.946 UTC [191] FATAL:  database "maison" does not exist
+2026-02-25 00:22:40.006 | 2026-02-24 23:22:40.006 UTC [198] FATAL:  database "maison" does not exist
+2026-02-25 00:22:50.059 | 2026-02-24 23:22:50.059 UTC [205] FATAL:  database "maison" does not exist
+2026-02-25 00:23:00.136 | 2026-02-24 23:23:00.136 UTC [213] FATAL:  database "maison" does not exist
+2026-02-25 00:23:10.180 | 2026-02-24 23:23:10.180 UTC [220] FATAL:  database "maison" does not exist
+2026-02-25 00:23:20.219 | 2026-02-24 23:23:20.219 UTC [227] FATAL:  database "maison" does not exist
+2026-02-25 00:23:30.395 | 2026-02-24 23:23:30.395 UTC [235] FATAL:  database "maison" does not exist
+2026-02-25 00:23:40.430 | 2026-02-24 23:23:40.430 UTC [242] FATAL:  database "maison" does not exist
+2026-02-25 00:23:50.466 | 2026-02-24 23:23:50.466 UTC [249] FATAL:  database "maison" does not exist
+2026-02-25 00:23:59.301 | 2026-02-24 23:23:59.301 UTC [28] LOG:  checkpoint starting: time
+2026-02-25 00:24:00.121 | 2026-02-24 23:24:00.120 UTC [28] LOG:  checkpoint complete: wrote 11 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.810 s, sync=0.004 s, total=0.820 s; sync files=10, longest=0.002 s, average=0.001 s; distance=31 kB, estimate=31 kB; lsn=0/21F6E00, redo lsn=0/21F6DC8
+2026-02-25 00:24:00.496 | 2026-02-24 23:24:00.496 UTC [258] FATAL:  database "maison" does not exist
+2026-02-25 00:24:10.529 | 2026-02-24 23:24:10.528 UTC [265] FATAL:  database "maison" does not exist
+2026-02-25 00:24:20.561 | 2026-02-24 23:24:20.561 UTC [272] FATAL:  database "maison" does not exist
+2026-02-25 00:24:30.594 | 2026-02-24 23:24:30.594 UTC [280] FATAL:  database "maison" does not exist
+2026-02-25 00:24:40.630 | 2026-02-24 23:24:40.630 UTC [287] FATAL:  database "maison" does not exist
+2026-02-25 00:24:50.701 | 2026-02-24 23:24:50.701 UTC [294] FATAL:  database "maison" does not exist
+2026-02-25 00:25:00.736 | 2026-02-24 23:25:00.736 UTC [302] FATAL:  database "maison" does not exist
+2026-02-25 00:25:10.810 | 2026-02-24 23:25:10.810 UTC [309] FATAL:  database "maison" does not exist
+2026-02-25 00:25:20.873 | 2026-02-24 23:25:20.872 UTC [316] FATAL:  database "maison" does not exist
+2026-02-25 00:18:59.152 | 
+2026-02-25 00:18:59.152 | PostgreSQL Database directory appears to contain a database; Skipping initialization
+2026-02-25 00:18:59.152 | 
+2026-02-25 00:25:30.918 | 2026-02-24 23:25:30.918 UTC [324] FATAL:  database "maison" does not exist
+2026-02-25 00:25:40.961 | 2026-02-24 23:25:40.961 UTC [331] FATAL:  database "maison" does not exist

@@ -42,7 +42,20 @@
       "authorizationServicesEnabled": false,
       "fullScopeAllowed": true,
       "defaultClientScopes": ["web-origins", "roles", "profile", "email"],
-      "optionalClientScopes": ["address", "phone", "offline_access"]
+      "optionalClientScopes": ["address", "phone", "offline_access"],
+      "protocolMappers": [
+        {
+          "name": "audience-maison-backend",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-audience-mapper",
+          "consentRequired": false,
+          "config": {
+            "included.client.audience": "maison-backend",
+            "id.token.claim": "false",
+            "access.token.claim": "true"
+          }
+        }
+      ]
     },
     {
       "clientId": "maison-frontend",
@@ -54,7 +67,9 @@
       "standardFlowEnabled": true,
       "implicitFlowEnabled": false,
       "directAccessGrantsEnabled": false,
-      "pkceCodeChallengeMethod": "S256",
+      "attributes": {
+        "pkce.code.challenge.method": "S256"
+      },
       "redirectUris": [
         "http://localhost:5173/*",
         "http://localhost:80/*",
@@ -81,7 +96,7 @@
       "credentials": [
         {
           "type": "password",
-          "value": "admin123",
+          "value": "admin1234",
           "temporary": false
         }
       ],

@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PassportModule } from '@nestjs/passport';
-import { ClientsModule, Transport } from '@nestjs/microservices';
 import { ProductsModule } from './products/products.module';
 import { OrdersModule } from './orders/orders.module';
 import { JwtStrategy } from './auth/jwt.strategy';
@@ -19,20 +18,6 @@ import { JwtStrategy } from './auth/jwt.strategy';
       synchronize: process.env.NODE_ENV !== 'production',
     }),
     PassportModule.register({ defaultStrategy: 'jwt' }),
-    ClientsModule.register([
-      {
-        name: 'RABBITMQ_CLIENT',
-        transport: Transport.RMQ,
-        options: {
-          urls: [
-            process.env.RABBITMQ_URL ??
-              'amqp://maison:changeme@rabbitmq:5672',
-          ],
-          queue: 'orders_queue',
-          queueOptions: { durable: true },
-        },
-      },
-    ]),
     ProductsModule,
     OrdersModule,
   ],

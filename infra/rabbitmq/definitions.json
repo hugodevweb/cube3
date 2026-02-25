@@ -1,0 +1,97 @@
+{
+  "vhosts": [
+    { "name": "/" }
+  ],
+  "users": [
+    {
+      "name": "maison",
+      "password_hash": "kI3FJWmADGfxDDtsbD3xQrJtgPA6kCf5UDnyEGyxrW2fThAu",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "administrator"
+    }
+  ],
+  "permissions": [
+    {
+      "user": "maison",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "queues": [
+    {
+      "name": "orders_queue",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "communaute_queue",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "media_queue",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "notifications_queue",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    }
+  ],
+  "exchanges": [
+    {
+      "name": "maison_events",
+      "vhost": "/",
+      "type": "topic",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    }
+  ],
+  "bindings": [
+    {
+      "source": "maison_events",
+      "vhost": "/",
+      "destination": "orders_queue",
+      "destination_type": "queue",
+      "routing_key": "order.#",
+      "arguments": {}
+    },
+    {
+      "source": "maison_events",
+      "vhost": "/",
+      "destination": "communaute_queue",
+      "destination_type": "queue",
+      "routing_key": "post.#",
+      "arguments": {}
+    },
+    {
+      "source": "maison_events",
+      "vhost": "/",
+      "destination": "media_queue",
+      "destination_type": "queue",
+      "routing_key": "media.#",
+      "arguments": {}
+    },
+    {
+      "source": "maison_events",
+      "vhost": "/",
+      "destination": "notifications_queue",
+      "destination_type": "queue",
+      "routing_key": "notification.#",
+      "arguments": {}
+    }
+  ]
+}
